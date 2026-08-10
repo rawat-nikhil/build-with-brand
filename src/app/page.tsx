@@ -92,7 +92,7 @@ function LaptopMockup() {
       <FloatingSphere size={70} tone="violet" className="absolute -left-4 top-4 opacity-70" />
       <FloatingCube size={60} tone="dark" delay={1} className="absolute -right-2 -bottom-4 opacity-80" />
       <div className="relative w-full rounded-t-xl border-4 border-b-0 border-[#1c1c24] bg-[#050409] p-4 shadow-[0_0_80px_-10px_rgba(124,92,252,0.45)]">
-        <div className="flex items-center justify-between rounded-md bg-gradient-to-br from-[#15101f] to-black px-4 py-10">
+        <div className="flex items-center justify-between rounded-md bg-linear-to-br from-[#15101f] to-black px-4 py-10">
           <span className="size-2 rounded-full bg-brand-violet/60" />
           <div className="flex flex-col items-center gap-2">
             <span
@@ -113,7 +113,7 @@ function LaptopMockup() {
           <span className="size-2 rounded-full bg-brand-violet/60" />
         </div>
       </div>
-      <div className="h-3 w-[110%] rounded-b-xl bg-gradient-to-b from-[#1c1c24] to-[#0a0a0f]" />
+      <div className="h-3 w-[110%] rounded-b-xl bg-linear-to-b from-[#1c1c24] to-[#0a0a0f]" />
     </div>
   );
 }

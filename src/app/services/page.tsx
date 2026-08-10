@@ -196,7 +196,7 @@ export default function ServicesPage() {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {otherCapabilities.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/3 p-6">
                 <span className="flex size-11 items-center justify-center rounded-lg bg-brand-violet/10 text-brand-violet">
                   <item.icon className="size-5" />
                 </span>
