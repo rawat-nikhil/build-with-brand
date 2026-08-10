@@ -1,0 +1,123 @@
+import Link from "next/link";
+import { Mail, Phone, MapPin } from "lucide-react";
+
+import { LogoMark } from "@/components/marketing/logo-mark";
+
+const socials = [
+  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "Instagram", href: "https://instagram.com" },
+  { label: "Dribbble", href: "https://dribbble.com" },
+  { label: "Twitter", href: "https://twitter.com" },
+];
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Work", href: "/work" },
+  { label: "Process", href: "/process" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+
+const services = [
+  "Website Development",
+  "Web Applications",
+  "E-commerce Solutions",
+  "UI/UX Design",
+];
+
+function SocialIcon({ label }: { label: string }) {
+  return (
+    <span className="flex size-9 items-center justify-center rounded-full bg-white/10 text-[0.65rem] font-semibold text-white/80 transition-colors hover:bg-white/20">
+      {label.slice(0, 2)}
+    </span>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="border-t border-white/10 bg-brand-bg-dark text-white/70">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-col gap-4">
+          <Link href="/" className="flex items-center gap-2">
+            <LogoMark />
+            <span className="text-sm font-semibold tracking-wide text-white">
+              BUILD WITH BRAND
+            </span>
+          </Link>
+          <p className="text-sm text-white/60">
+            We help businesses and creators build digital products that are
+            meaningful, functional and designed to grow.
+          </p>
+          <div className="flex gap-3 pt-1">
+            {socials.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={social.label}
+              >
+                <SocialIcon label={social.label} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold text-white">Quick Links</h3>
+          <ul className="mt-4 flex flex-col gap-3 text-sm">
+            {quickLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="hover:text-white">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold text-white">Services</h3>
+          <ul className="mt-4 flex flex-col gap-3 text-sm">
+            {services.map((service) => (
+              <li key={service}>{service}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold text-white">Contact</h3>
+          <ul className="mt-4 flex flex-col gap-3 text-sm">
+            <li className="flex items-center gap-2">
+              <Mail className="size-4 text-brand-violet" />
+              hello@buildwithbrand.com
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone className="size-4 text-brand-violet" />
+              +91 1234567890
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPin className="size-4 text-brand-violet" />
+              India
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col-reverse items-center justify-between gap-4 px-6 py-6 text-xs text-white/50 sm:flex-row">
+          <p>© {new Date().getFullYear()} Build With Brand. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-white">
+              Terms &amp; Conditions
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

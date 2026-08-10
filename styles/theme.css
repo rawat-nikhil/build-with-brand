@@ -75,3 +75,23 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+
+/**
+ * Brand marketing tokens — fixed design colors for the public site.
+ * These are independent of the light/dark mode toggle above: marketing
+ * pages mix dark and light sections on purpose (e.g. a dark hero above
+ * an off-white "our story" section), so they read the tokens directly
+ * rather than flipping with the `.dark` class.
+ */
+:root {
+  --brand-violet: #8b5cf6;
+  --brand-violet-2: #7c5cfc;
+  --brand-indigo: #6366f1;
+  --brand-bg-dark: #0a0a0f;
+  --brand-bg-dark-2: #000000;
+  --brand-bg-light: #f7f6fb;
+  --brand-ink: #111111;
+  --brand-ink-secondary: #6b7280;
+  --brand-white: #ededed;
+  --brand-muted-dark: #9ca3af;
+}
