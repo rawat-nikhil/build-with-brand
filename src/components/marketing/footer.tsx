@@ -42,8 +42,8 @@ export function Footer() {
             <Image
               src="/header.png"
               alt="Build with Brand"
-              width={645}
-              height={140}
+              width={700}
+              height={200}
               className="h-10 w-auto"
             />
           </Link>

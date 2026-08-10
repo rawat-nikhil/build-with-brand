@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import {
-  Award,
   Code,
   Monitor,
   Palette,
@@ -8,8 +7,6 @@ import {
   Rocket,
   Search,
   ShoppingCart,
-  Smile,
-  Users,
 } from "lucide-react";
 
 import { Hero } from "@/components/marketing/hero";
@@ -22,6 +19,7 @@ import { CTASection } from "@/components/marketing/cta-section";
 import { HeroPaginationDots } from "@/components/marketing/hero-pagination-dots";
 import { FloatingCube } from "@/components/decor/floating-cube";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
+import { stats } from "@/lib/stats";
 
 export const metadata: Metadata = {
   title: "Build With Brand — Digital Studio",
@@ -77,13 +75,6 @@ const processSteps = [
     title: "Launch & Support",
     description: "We launch successfully and stay with you for continuous support.",
   },
-];
-
-const stats = [
-  { icon: Users, value: "50+", label: "Happy Clients" },
-  { icon: Rocket, value: "70+", label: "Projects Delivered" },
-  { icon: Award, value: "5+", label: "Years of Experience" },
-  { icon: Smile, value: "100%", label: "Client Satisfaction" },
 ];
 
 function LaptopMockup() {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Award, Gem, Play, Rocket, ShieldCheck, Smile, Users, Zap } from "lucide-react";
+import { ArrowRight, Gem, Play, ShieldCheck, Users, Zap } from "lucide-react";
 
 import { Hero } from "@/components/marketing/hero";
 import { Eyebrow } from "@/components/marketing/eyebrow";
@@ -11,19 +11,13 @@ import { CTASection } from "@/components/marketing/cta-section";
 import { FloatingCube } from "@/components/decor/floating-cube";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
 import { FloatingGlassPanel } from "@/components/decor/floating-glass-panel";
+import { stats } from "@/lib/stats";
 
 export const metadata: Metadata = {
   title: "About — Build With Brand",
   description:
     "We're a digital studio helping businesses and creators build meaningful, functional digital products.",
 };
-
-const stats = [
-  { icon: Users, value: "50+", label: "Happy Clients" },
-  { icon: Rocket, value: "70+", label: "Projects Delivered" },
-  { icon: Award, value: "5+", label: "Years of Experience" },
-  { icon: Smile, value: "100%", label: "Client Satisfaction" },
-];
 
 const values = [
   {
