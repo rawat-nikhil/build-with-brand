@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { CtaButton } from "@/components/marketing/cta-button";
-import { LogoMark } from "@/components/marketing/logo-mark";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -30,11 +30,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-bg-dark/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <LogoMark />
-          <span className="text-sm font-semibold tracking-wide text-white">
-            BUILD WITH BRAND
-          </span>
+        <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
+          <Image
+            src="/header.png"
+            alt="Build with Brand"
+            width={645}
+            height={140}
+            className="h-8 w-auto"
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

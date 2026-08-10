@@ -1,7 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
-
-import { LogoMark } from "@/components/marketing/logo-mark";
 
 const socials = [
   { label: "LinkedIn", href: "https://linkedin.com" },
@@ -39,11 +38,14 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-brand-bg-dark text-white/70">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <Link href="/" className="flex items-center gap-2">
-            <LogoMark />
-            <span className="text-sm font-semibold tracking-wide text-white">
-              BUILD WITH BRAND
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/header.png"
+              alt="Build with Brand"
+              width={645}
+              height={140}
+              className="h-10 w-auto"
+            />
           </Link>
           <p className="text-sm text-white/60">
             We help businesses and creators build digital products that are
