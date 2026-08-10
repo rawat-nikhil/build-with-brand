@@ -49,6 +49,16 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-violet-2: var(--brand-violet-2);
+  --color-brand-indigo: var(--brand-indigo);
+  --color-brand-bg-dark: var(--brand-bg-dark);
+  --color-brand-bg-dark-2: var(--brand-bg-dark-2);
+  --color-brand-bg-light: var(--brand-bg-light);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-ink-secondary: var(--brand-ink-secondary);
+  --color-brand-white: var(--brand-white);
+  --color-brand-muted-dark: var(--brand-muted-dark);
 }
 
 @layer base {
