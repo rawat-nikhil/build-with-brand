@@ -23,6 +23,7 @@ export default function ContactPage() {
         }
         description="Have a project in mind or just want to say hi? We'd love to hear from you."
         extra={<IconInfoList items={quickContacts} />}
+        extraFullWidth
         visual={
           <div className="contact-page__visual">
             <FloatingSphere

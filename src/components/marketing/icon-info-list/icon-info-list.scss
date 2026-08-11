@@ -1,7 +1,7 @@
 @reference "../../../app/globals.css";
 
 .icon-info-list {
-  @apply mt-10 flex flex-wrap gap-x-8 gap-y-4;
+  @apply mt-10 grid gap-4 sm:grid-cols-3;
 
   &__item { @apply flex items-center gap-3; }
 
@@ -11,5 +11,5 @@
 
   &__label { @apply text-sm font-semibold text-white; }
 
-  &__value { @apply text-sm text-white/50 whitespace-nowrap; }
+  &__value { @apply text-sm text-white/50; }
 }
