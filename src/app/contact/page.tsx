@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 
 import { Hero } from "@/components/marketing/hero";
 import { CtaButton } from "@/components/marketing/cta-button";
@@ -8,6 +8,8 @@ import { ContactMethodCard } from "@/components/marketing/contact-method-card";
 import { MapPlaceholder } from "@/components/marketing/map-placeholder";
 import { FloatingPaperPlane } from "@/components/decor/floating-paper-plane";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
+import { contacts } from "@/lib/contacts";
+import { socials } from "@/lib/socials";
 
 export const metadata: Metadata = {
   title: "Contact — Build With Brand",
@@ -15,38 +17,8 @@ export const metadata: Metadata = {
     "Have a project in mind or just want to say hi? We'd love to hear from you.",
 };
 
-const quickContacts = [
-  { icon: Mail, label: "Email Us", value: "hello@buildwithbrand.com" },
-  { icon: Phone, label: "Call Us", value: "+91 9870114941" },
-  { icon: MapPin, label: "Location", value: "India" },
-];
-
-const otherWays = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "hello@buildwithbrand.com",
-    sub: "We reply within 24 hours",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 9870114941",
-    sub: "Mon - Sat, 10:00 AM - 7:00 PM IST",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "India",
-    sub: "We're available worldwide",
-  },
-  {
-    icon: Clock,
-    label: "Business Hours",
-    value: "Mon - Sat, 10:00 AM - 7:00 PM IST",
-    sub: "Sunday: Closed",
-  },
-];
+const quickContacts = [contacts.email, contacts.phone, contacts.location];
+const otherWays = Object.values(contacts);
 
 export default function ContactPage() {
   return (
@@ -125,16 +97,24 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-8 flex gap-3">
-              {["LinkedIn", "Instagram", "Dribbble", "Twitter"].map(
-                (social) => (
-                  <span
-                    key={social}
-                    className="flex size-9 items-center justify-center rounded-full bg-white/10 text-[0.65rem] font-semibold text-white/80"
-                  >
-                    {social.slice(0, 2)}
-                  </span>
-                ),
-              )}
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={social.label}
+                  className="flex size-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.label}
+                    width={20}
+                    height={20}
+                    className="size-4 object-contain brightness-0 invert"
+                  />
+                </a>
+              ))}
             </div>
           </div>
         </div>

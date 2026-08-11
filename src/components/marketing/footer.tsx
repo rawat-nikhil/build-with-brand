@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
 
 import { services } from "@/lib/services";
 import { socials } from "@/lib/socials";
+import { contacts } from "@/lib/contacts";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -86,18 +86,12 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-white">Contact</h3>
           <ul className="mt-4 flex flex-col gap-3 text-sm">
-            <li className="flex items-center gap-2">
-              <Mail className="size-4 text-brand-violet" />
-              hello@buildwithbrand.com
-            </li>
-            <li className="flex items-center gap-2">
-              <Phone className="size-4 text-brand-violet" />
-              +91 9870114941
-            </li>
-            <li className="flex items-center gap-2">
-              <MapPin className="size-4 text-brand-violet" />
-              India
-            </li>
+            {[contacts.email, contacts.phone, contacts.location].map((item) => (
+              <li key={item.label} className="flex items-center gap-2">
+                <item.icon className="size-4 text-brand-violet" />
+                {item.value}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
