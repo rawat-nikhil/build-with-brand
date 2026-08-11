@@ -42,7 +42,7 @@ export function Hero({
           {extra}
         </div>
         {visual && (
-          <div className="relative flex min-h-[280px] items-center justify-center lg:justify-end">
+          <div className="relative flex min-h-70 items-center justify-center lg:justify-end">
             {visual}
           </div>
         )}
