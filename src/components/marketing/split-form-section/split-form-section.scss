@@ -1,0 +1,29 @@
+@reference "../../../app/globals.css";
+
+.split-form-section {
+  @apply mx-auto grid max-w-3/4 grid-cols-1 lg:grid-cols-2;
+
+  &__form-panel { @apply bg-white px-6 py-16 sm:px-10; }
+
+  &__inner { @apply mx-auto max-w-lg; }
+
+  &__section-title { @apply text-2xl font-semibold text-brand-ink; }
+
+  &__section-desc { @apply mt-2 text-sm text-brand-ink-secondary; }
+
+  &__form-wrapper { @apply mt-8; }
+
+  &__info-panel { @apply bg-brand-bg-dark px-6 py-16 text-white sm:px-10; }
+
+  &__panel-title { @apply text-2xl font-semibold; }
+
+  &__panel-desc { @apply mt-2 text-sm text-white/50; }
+
+  &__methods { @apply mt-8 flex flex-col gap-4; }
+
+  &__socials { @apply mt-8 flex gap-3; }
+
+  &__social-link { @apply flex size-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20; }
+
+  &__social-icon { @apply size-4 object-contain brightness-0 invert; }
+}

@@ -14,7 +14,7 @@ export function StatsBar({ stats, className }: { stats: Stat[]; className?: stri
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 sm:grid-cols-4">
         {stats.map((stat) => (
           <div key={stat.label} className="flex flex-col items-center gap-2 text-center">
-            <stat.icon className="size-6 text-brand-violet" />
+            <stat.icon className="size-8 mb-2 text-brand-violet" />
             <p className="text-3xl font-semibold text-white sm:text-4xl">{stat.value}</p>
             <p className="text-sm text-white/60">{stat.label}</p>
           </div>

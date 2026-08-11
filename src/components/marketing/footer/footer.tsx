@@ -1,14 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
 
-import { LogoMark } from "@/components/marketing/logo-mark";
-
-const socials = [
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "Dribbble", href: "https://dribbble.com" },
-  { label: "Twitter", href: "https://twitter.com" },
-];
+import { services } from "@/lib/services";
+import { socials } from "@/lib/socials";
+import { contacts } from "@/lib/contacts";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -19,17 +14,16 @@ const quickLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const services = [
-  "Website Development",
-  "Web Applications",
-  "E-commerce Solutions",
-  "UI/UX Design",
-];
-
-function SocialIcon({ label }: { label: string }) {
+function SocialIcon({ label, icon }: { label: string; icon: string }) {
   return (
-    <span className="flex size-9 items-center justify-center rounded-full bg-white/10 text-[0.65rem] font-semibold text-white/80 transition-colors hover:bg-white/20">
-      {label.slice(0, 2)}
+    <span className="flex size-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
+      <Image
+        src={icon}
+        alt={label}
+        width={20}
+        height={20}
+        className="size-4 object-contain brightness-0 invert"
+      />
     </span>
   );
 }
@@ -39,11 +33,14 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-brand-bg-dark text-white/70">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <Link href="/" className="flex items-center gap-2">
-            <LogoMark />
-            <span className="text-sm font-semibold tracking-wide text-white">
-              BUILD WITH BRAND
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/header.png"
+              alt="Build with Brand"
+              width={700}
+              height={200}
+              className="h-10 w-auto"
+            />
           </Link>
           <p className="text-sm text-white/60">
             We help businesses and creators build digital products that are
@@ -58,7 +55,7 @@ export function Footer() {
                 rel="noreferrer"
                 aria-label={social.label}
               >
-                <SocialIcon label={social.label} />
+                <SocialIcon label={social.label} icon={social.icon} />
               </a>
             ))}
           </div>
@@ -81,7 +78,7 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-white">Services</h3>
           <ul className="mt-4 flex flex-col gap-3 text-sm">
             {services.map((service) => (
-              <li key={service}>{service}</li>
+              <li key={service.title}>{service.title}</li>
             ))}
           </ul>
         </div>
@@ -89,25 +86,21 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-white">Contact</h3>
           <ul className="mt-4 flex flex-col gap-3 text-sm">
-            <li className="flex items-center gap-2">
-              <Mail className="size-4 text-brand-violet" />
-              hello@buildwithbrand.com
-            </li>
-            <li className="flex items-center gap-2">
-              <Phone className="size-4 text-brand-violet" />
-              +91 1234567890
-            </li>
-            <li className="flex items-center gap-2">
-              <MapPin className="size-4 text-brand-violet" />
-              India
-            </li>
+            {[contacts.email, contacts.phone, contacts.location].map((item) => (
+              <li key={item.label} className="flex items-center gap-2">
+                <item.icon className="size-4 text-brand-violet" />
+                {item.value}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col-reverse items-center justify-between gap-4 px-6 py-6 text-xs text-white/50 sm:flex-row">
-          <p>© {new Date().getFullYear()} Build With Brand. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Build With Brand. All rights reserved.
+          </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white">
               Privacy Policy

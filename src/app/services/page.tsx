@@ -1,16 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Cloud,
-  Code,
-  Monitor,
-  Palette,
-  Phone,
-  Rocket,
-  Settings,
-  ShoppingCart,
-  Target,
-  TrendingUp,
-} from "lucide-react";
+import { Cloud, Phone, Rocket, Settings, Target, TrendingUp } from "lucide-react";
 
 import { Hero } from "@/components/marketing/hero";
 import { Eyebrow } from "@/components/marketing/eyebrow";
@@ -19,53 +8,13 @@ import { ServiceCard } from "@/components/marketing/service-card";
 import { CTASection } from "@/components/marketing/cta-section";
 import { FloatingCube } from "@/components/decor/floating-cube";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
+import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "Services — Build With Brand",
   description:
     "Digital solutions that drive real growth: websites, web applications, e-commerce and UI/UX design.",
 };
-
-const detailedServices = [
-  {
-    icon: Monitor,
-    index: "01",
-    title: "Website Development",
-    description: "Modern, responsive and fast websites that represent your brand perfectly.",
-    bullets: [
-      "Custom Business Websites",
-      "Landing Pages",
-      "CMS Development",
-      "Performance Optimization",
-    ],
-  },
-  {
-    icon: Code,
-    index: "02",
-    title: "Web Applications",
-    description: "Scalable and secure web applications built for performance and growth.",
-    bullets: ["Custom Web Apps", "SaaS Development", "API Development", "Third-party Integrations"],
-  },
-  {
-    icon: ShoppingCart,
-    index: "03",
-    title: "E-commerce Solutions",
-    description: "High-converting online stores with seamless checkout and great user experience.",
-    bullets: [
-      "Shopify Development",
-      "Custom E-commerce",
-      "Payment Integration",
-      "Store Optimization",
-    ],
-  },
-  {
-    icon: Palette,
-    index: "04",
-    title: "UI/UX Design",
-    description: "Clean, intuitive and engaging designs that connect with your audience.",
-    bullets: ["User Research", "Wireframing & Prototyping", "UI Design", "Design Systems"],
-  },
-];
 
 const otherCapabilities = [
   {
@@ -175,8 +124,13 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {detailedServices.map((service) => (
-              <ServiceCard key={service.title} {...service} href="/contact" />
+            {services.map((service, i) => (
+              <ServiceCard
+                key={service.title}
+                {...service}
+                index={String(i + 1).padStart(2, "0")}
+                href="/contact"
+              />
             ))}
           </div>
         </div>
@@ -196,7 +150,7 @@ export default function ServicesPage() {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {otherCapabilities.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/3 p-6">
                 <span className="flex size-11 items-center justify-center rounded-lg bg-brand-violet/10 text-brand-violet">
                   <item.icon className="size-5" />
                 </span>

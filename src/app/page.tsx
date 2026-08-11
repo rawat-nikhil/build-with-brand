@@ -1,218 +1,23 @@
-import type { Metadata } from "next";
-import {
-  Award,
-  Code,
-  Monitor,
-  Palette,
-  Percent,
-  Rocket,
-  Search,
-  ShoppingCart,
-  Smile,
-  Users,
-} from "lucide-react";
-
-import { Hero } from "@/components/marketing/hero";
-import { Eyebrow } from "@/components/marketing/eyebrow";
-import { CtaButton } from "@/components/marketing/cta-button";
-import { ServiceCard } from "@/components/marketing/service-card";
-import { ProcessSummary } from "@/components/marketing/process-summary";
+import { HomeHero } from "@/components/marketing/home-hero";
+import { HomeServicesSection } from "@/components/marketing/home-services-section";
+import { HomeProcessSection } from "@/components/marketing/home-process-section";
 import { StatsBar } from "@/components/marketing/stats-bar";
 import { CTASection } from "@/components/marketing/cta-section";
-import { HeroPaginationDots } from "@/components/marketing/hero-pagination-dots";
+import { CtaButton } from "@/components/marketing/cta-button";
 import { FloatingCube } from "@/components/decor/floating-cube";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
+import { stats } from "@/lib/stats";
+import { processSteps } from "./constants";
 
-export const metadata: Metadata = {
-  title: "Build With Brand — Digital Studio",
-  description:
-    "We build digital experiences that build your brand — websites, web apps, e-commerce and UI/UX design.",
-};
-
-const services = [
-  {
-    icon: Monitor,
-    title: "Website Development",
-    description: "Modern, responsive and fast websites that represent your brand perfectly.",
-  },
-  {
-    icon: Code,
-    title: "Web Applications",
-    description: "Scalable and secure web applications built for performance and growth.",
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce Solutions",
-    description: "High-converting online stores with seamless checkout and great experience.",
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Clean, intuitive and engaging designs that connect with your audience.",
-  },
-];
-
-const processSteps = [
-  {
-    number: "01",
-    icon: Search,
-    title: "Discover",
-    description: "We understand your goals, audience and requirements.",
-  },
-  {
-    number: "02",
-    icon: Percent,
-    title: "Plan",
-    description: "We create a strategy, wireframes and roadmap for your project.",
-  },
-  {
-    number: "03",
-    icon: Code,
-    title: "Build",
-    description: "We design, develop and bring your product to life.",
-  },
-  {
-    number: "04",
-    icon: Rocket,
-    title: "Launch & Support",
-    description: "We launch successfully and stay with you for continuous support.",
-  },
-];
-
-const stats = [
-  { icon: Users, value: "50+", label: "Happy Clients" },
-  { icon: Rocket, value: "70+", label: "Projects Delivered" },
-  { icon: Award, value: "5+", label: "Years of Experience" },
-  { icon: Smile, value: "100%", label: "Client Satisfaction" },
-];
-
-function LaptopMockup() {
-  return (
-    <div className="relative flex w-full max-w-md items-center justify-center py-10">
-      <FloatingSphere size={70} tone="violet" className="absolute -left-4 top-4 opacity-70" />
-      <FloatingCube size={60} tone="dark" delay={1} className="absolute -right-2 -bottom-4 opacity-80" />
-      <div className="relative w-full rounded-t-xl border-4 border-b-0 border-[#1c1c24] bg-[#050409] p-4 shadow-[0_0_80px_-10px_rgba(124,92,252,0.45)]">
-        <div className="flex items-center justify-between rounded-md bg-gradient-to-br from-[#15101f] to-black px-4 py-10">
-          <span className="size-2 rounded-full bg-brand-violet/60" />
-          <div className="flex flex-col items-center gap-2">
-            <span
-              className="size-10 rounded-full"
-              style={{
-                background:
-                  "conic-gradient(from 210deg, #7c5cfc, #f5f3ff 30%, #7c5cfc 60%, #0a0a0f 90%)",
-              }}
-            />
-            <p className="text-center text-sm font-semibold tracking-wide text-white">
-              BUILD
-              <br />
-              WITH
-              <br />
-              BRAND
-            </p>
-          </div>
-          <span className="size-2 rounded-full bg-brand-violet/60" />
-        </div>
-      </div>
-      <div className="h-3 w-[110%] rounded-b-xl bg-gradient-to-b from-[#1c1c24] to-[#0a0a0f]" />
-    </div>
-  );
-}
+export { metadata } from "./constants";
 
 export default function Home() {
   return (
     <>
-      <Hero
-        eyebrowNode={
-          <span className="mb-2 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 px-4 py-1.5 text-xs text-white/70">
-            <span className="size-1.5 rounded-full bg-brand-violet" />
-            BUILD WITH PURPOSE. BRAND WITH IMPACT.
-          </span>
-        }
-        title={
-          <>
-            We build digital experiences that build{" "}
-            <span className="text-brand-violet">your brand.</span>
-          </>
-        }
-        description="We help businesses and creators turn ideas into powerful digital products that are beautiful, fast and built to grow."
-        actions={
-          <>
-            <CtaButton href="/services">Explore Services</CtaButton>
-            <CtaButton href="/work" variant="outline-dark" icon={false}>
-              View Our Work
-            </CtaButton>
-          </>
-        }
-        extra={
-          <div className="mt-10 flex items-center gap-3">
-            <div className="flex -space-x-3">
-              {[0, 1, 2, 3].map((i) => (
-                <span
-                  key={i}
-                  className="size-9 rounded-full border-2 border-brand-bg-dark bg-gradient-to-br from-white/30 to-white/5"
-                />
-              ))}
-            </div>
-            <p className="text-sm text-white/50">
-              Trusted by 50+ clients
-              <br />
-              worldwide
-            </p>
-          </div>
-        }
-        visual={
-          <div className="flex w-full items-center justify-between gap-6">
-            <LaptopMockup />
-            <HeroPaginationDots />
-          </div>
-        }
-        className="pt-10"
-      />
-
-      <section className="bg-brand-bg-light px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <div>
-              <Eyebrow>What We Do</Eyebrow>
-              <h2 className="mt-3 max-w-xl text-3xl font-semibold text-brand-ink sm:text-4xl">
-                Services that power your <span className="text-brand-violet">digital growth.</span>
-              </h2>
-            </div>
-            <p className="max-w-sm text-sm text-brand-ink-secondary">
-              From stunning websites to scalable web applications, we deliver end-to-end
-              solutions tailored to your brand and business goals.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <ServiceCard key={service.title} {...service} href="/services" linkLabel={service.title} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <div>
-              <Eyebrow>Our Process</Eyebrow>
-              <h2 className="mt-3 max-w-xl text-3xl font-semibold text-brand-ink sm:text-4xl">
-                A proven process. Built for <span className="text-brand-violet">results.</span>
-              </h2>
-            </div>
-            <p className="max-w-sm text-sm text-brand-ink-secondary">
-              We follow a simple yet effective process to turn your ideas into impactful
-              digital products.
-            </p>
-          </div>
-
-          <ProcessSummary steps={processSteps} className="mt-16" />
-        </div>
-      </section>
-
+      <HomeHero />
+      <HomeServicesSection />
+      <HomeProcessSection steps={processSteps} />
       <StatsBar stats={stats} />
-
       <CTASection
         tone="gradient"
         title="Ready to build something amazing together?"
