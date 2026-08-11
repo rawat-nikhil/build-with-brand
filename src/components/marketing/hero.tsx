@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 import { Eyebrow } from "@/components/marketing/eyebrow";
 
@@ -9,6 +11,7 @@ interface HeroProps {
   actions?: React.ReactNode;
   extra?: React.ReactNode;
   visual?: React.ReactNode;
+  backgroundImage?: string;
   className?: string;
 }
 
@@ -20,6 +23,7 @@ export function Hero({
   actions,
   extra,
   visual,
+  backgroundImage,
   className,
 }: HeroProps) {
   return (
@@ -29,7 +33,23 @@ export function Hero({
         className
       )}
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+      {backgroundImage && (
+        <>
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain object-right"
+          />
+          <div
+            className="absolute inset-0 bg-linear-to-r from-brand-bg-dark via-brand-bg-dark/70 to-transparent"
+            aria-hidden
+          />
+        </>
+      )}
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
         <div>
           {eyebrowNode ?? (eyebrow && <Eyebrow>{eyebrow}</Eyebrow>)}
           <h1 className="mt-4 text-4xl leading-[1.1] font-semibold tracking-tight sm:text-5xl lg:text-6xl">

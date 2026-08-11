@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Code,
-  Monitor,
-  Palette,
-  Percent,
-  Rocket,
-  Search,
-  ShoppingCart,
-} from "lucide-react";
+import { Code, Percent, Rocket, Search } from "lucide-react";
 
 import { Hero } from "@/components/marketing/hero";
 import { Eyebrow } from "@/components/marketing/eyebrow";
@@ -19,6 +11,7 @@ import { CTASection } from "@/components/marketing/cta-section";
 import { HeroPaginationDots } from "@/components/marketing/hero-pagination-dots";
 import { FloatingCube } from "@/components/decor/floating-cube";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
+import { services } from "@/lib/services";
 import { stats } from "@/lib/stats";
 
 export const metadata: Metadata = {
@@ -26,29 +19,6 @@ export const metadata: Metadata = {
   description:
     "We build digital experiences that build your brand — websites, web apps, e-commerce and UI/UX design.",
 };
-
-const services = [
-  {
-    icon: Monitor,
-    title: "Website Development",
-    description: "Modern, responsive and fast websites that represent your brand perfectly.",
-  },
-  {
-    icon: Code,
-    title: "Web Applications",
-    description: "Scalable and secure web applications built for performance and growth.",
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce Solutions",
-    description: "High-converting online stores with seamless checkout and great experience.",
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Clean, intuitive and engaging designs that connect with your audience.",
-  },
-];
 
 const processSteps = [
   {
@@ -77,44 +47,13 @@ const processSteps = [
   },
 ];
 
-function LaptopMockup() {
-  return (
-    <div className="relative flex w-full max-w-md items-center justify-center py-10">
-      <FloatingSphere size={70} tone="violet" className="absolute -left-4 top-4 opacity-70" />
-      <FloatingCube size={60} tone="dark" delay={1} className="absolute -right-2 -bottom-4 opacity-80" />
-      <div className="relative w-full rounded-t-xl border-4 border-b-0 border-[#1c1c24] bg-[#050409] p-4 shadow-[0_0_80px_-10px_rgba(124,92,252,0.45)]">
-        <div className="flex items-center justify-between rounded-md bg-linear-to-br from-[#15101f] to-black px-4 py-10">
-          <span className="size-2 rounded-full bg-brand-violet/60" />
-          <div className="flex flex-col items-center gap-2">
-            <span
-              className="size-10 rounded-full"
-              style={{
-                background:
-                  "conic-gradient(from 210deg, #7c5cfc, #f5f3ff 30%, #7c5cfc 60%, #0a0a0f 90%)",
-              }}
-            />
-            <p className="text-center text-sm font-semibold tracking-wide text-white">
-              BUILD
-              <br />
-              WITH
-              <br />
-              BRAND
-            </p>
-          </div>
-          <span className="size-2 rounded-full bg-brand-violet/60" />
-        </div>
-      </div>
-      <div className="h-3 w-[110%] rounded-b-xl bg-linear-to-b from-[#1c1c24] to-[#0a0a0f]" />
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <>
       <Hero
+        backgroundImage="/hero-banner.png"
         eyebrowNode={
-          <span className="mb-2 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 px-4 py-1.5 text-xs text-white/70">
+          <span className="mb-2 inline-flex w-fit items-center gap-2 border-white/15 py-1.5 text-xs text-white/70">
             <span className="size-1.5 rounded-full bg-brand-violet" />
             BUILD WITH PURPOSE. BRAND WITH IMPACT.
           </span>
@@ -151,13 +90,8 @@ export default function Home() {
             </p>
           </div>
         }
-        visual={
-          <div className="flex w-full items-center justify-between gap-6">
-            <LaptopMockup />
-            <HeroPaginationDots />
-          </div>
-        }
-        className="pt-10"
+        visual={<HeroPaginationDots />}
+        className="min-h-128 pt-10"
       />
 
       <section className="bg-brand-bg-light px-6 py-20">
@@ -176,8 +110,15 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <ServiceCard key={service.title} {...service} href="/services" linkLabel={service.title} />
+            {services.map(({ icon, title, description }) => (
+              <ServiceCard
+                key={title}
+                icon={icon}
+                title={title}
+                description={description}
+                href="/services"
+                linkLabel={title}
+              />
             ))}
           </div>
         </div>
