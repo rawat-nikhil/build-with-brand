@@ -1,0 +1,7 @@
+@reference "../globals.css";
+
+.contact-page {
+  &__accent { @apply text-brand-violet; }
+
+  &__visual { @apply relative flex size-64 items-center justify-center; }
+}
