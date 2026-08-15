@@ -1,45 +1,59 @@
+"use client";
+
+import { AdvancedMarker, APIProvider, ColorScheme, Map } from "@vis.gl/react-google-maps";
 import { MapPin } from "lucide-react";
+
+import { mapView } from "@/content/contacts";
 import "./map-placeholder.scss";
 
-const LABELS = [
-  { label: "Paschim Vihar", top: "8%", left: "8%" },
-  { label: "Rohini", top: "34%", left: "4%" },
-  { label: "Dwarka", top: "78%", left: "10%" },
-  { label: "Indirapuram", top: "10%", left: "62%" },
-  { label: "Vasundhara", top: "22%", left: "80%" },
-  { label: "Chandni Chowk", top: "40%", left: "38%" },
-  { label: "Hauz Khas", top: "68%", left: "42%" },
-  { label: "Lajpat Nagar", top: "82%", left: "56%" },
-  { label: "Noida", top: "50%", left: "88%" },
-  { label: "Greater Noida", top: "88%", left: "82%" },
-];
+const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
+const mapId = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID || "DEMO_MAP_ID";
 
-export function MapPlaceholder() {
+function MapPinMarker() {
+  return (
+    <>
+      <span className="map-placeholder__pin-pulse" />
+      <span className="map-placeholder__pin">
+        <MapPin className="map-placeholder__pin-icon" />
+      </span>
+    </>
+  );
+}
+
+function MapFallback() {
   return (
     <div className="map-placeholder">
-      <div
-        className="map-placeholder__grid"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
-      {LABELS.map((item) => (
-        <span
-          key={item.label}
-          className="map-placeholder__label"
-          style={{ top: item.top, left: item.left }}
-        >
-          {item.label}
-        </span>
-      ))}
       <div className="map-placeholder__pin-wrapper">
-        <span className="map-placeholder__pin-pulse" />
-        <span className="map-placeholder__pin">
-          <MapPin className="map-placeholder__pin-icon" />
-        </span>
+        <MapPinMarker />
       </div>
+    </div>
+  );
+}
+
+export function MapPlaceholder() {
+  if (!apiKey) {
+    return <MapFallback />;
+  }
+
+  return (
+    <div className="map-placeholder">
+      <APIProvider apiKey={apiKey} libraries={["marker"]}>
+        <Map
+          className="map-placeholder__map"
+          mapId={mapId}
+          defaultCenter={mapView.center}
+          defaultZoom={mapView.zoom}
+          colorScheme={ColorScheme.DARK}
+          gestureHandling="greedy"
+          disableDefaultUI
+        >
+          <AdvancedMarker position={mapView.center}>
+            <span className="map-placeholder__pin-cluster">
+              <MapPinMarker />
+            </span>
+          </AdvancedMarker>
+        </Map>
+      </APIProvider>
     </div>
   );
 }

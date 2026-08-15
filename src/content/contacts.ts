@@ -28,3 +28,9 @@ export const contacts = {
     sub: "Sunday: Closed",
   },
 } satisfies Record<string, ContactMethod>;
+
+/** Delhi NCR viewport for the contact map. */
+export const mapView = {
+  center: { lat: 28.681675, lng: 77.362306 },
+  zoom: 18,
+} as const;

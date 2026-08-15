@@ -2,21 +2,27 @@
 
 .map-placeholder {
   @apply relative h-full min-h-80 w-full overflow-hidden bg-brand-bg-canvas;
-  &__grid {
-    @apply absolute inset-0 opacity-40;
+
+  &__map {
+    @apply size-full min-h-80;
   }
-  &__label {
-    @apply absolute text-2xs tracking-wide text-white/25 uppercase;
+
+  &__pin-cluster {
+    @apply relative;
   }
+
   &__pin-wrapper {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }
+
   &__pin-pulse {
     @apply absolute inset-0 -m-4 animate-ping rounded-full bg-brand-violet/30;
   }
+
   &__pin {
     @apply relative flex size-9 items-center justify-center rounded-full bg-brand-violet shadow-pin-glow;
   }
+
   &__pin-icon {
     @apply size-5 fill-white text-white;
   }
