@@ -2,11 +2,11 @@
 
 .home-hero {
   .hero__bg-image {
-    @apply object-contain object-right;
+    @apply hidden object-contain object-right lg:block;
     mix-blend-mode: lighten;
   }
   .hero__bg-overlay {
-    @apply absolute inset-0;
+    @apply absolute inset-0 hidden lg:block;
     background-image: linear-gradient(
       to right,
       var(--brand-bg-dark) 0%,
