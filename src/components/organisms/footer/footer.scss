@@ -1,0 +1,32 @@
+@reference "#globals.css";
+
+.footer {
+  @apply border-t border-white/10 bg-brand-bg-dark text-white/70;
+  &__grid {
+    @apply mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4;
+  }
+  &__brand {
+    @apply flex flex-col gap-4;
+  }
+  &__tagline {
+    @apply text-sm text-white/60;
+  }
+  &__contact-item {
+    @apply flex items-center gap-2;
+  }
+  &__contact-icon {
+    @apply size-4 text-brand-violet;
+  }
+  &__bottom {
+    @apply border-t border-white/10;
+  }
+  &__bottom-inner {
+    @apply mx-auto flex max-w-7xl flex-col-reverse items-center justify-between gap-4 px-6 py-6 text-xs text-white/50 sm:flex-row;
+  }
+  &__legal-links {
+    @apply flex gap-6;
+  }
+  &__legal-link {
+    @apply hover:text-white;
+  }
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { contacts } from "@/lib/contacts";
+import { contacts } from "@/content/contacts";
 
 export const metadata: Metadata = {
   title: "Contact — Build With Brand",

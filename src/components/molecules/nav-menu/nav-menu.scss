@@ -1,0 +1,5 @@
+@reference "#globals.css";
+
+.nav-menu {
+  @apply hidden items-center gap-8 md:flex;
+}

@@ -1,10 +1,10 @@
-import { Hero } from "@/components/marketing/hero";
-import { IconInfoList } from "@/components/marketing/icon-info-list";
-import { SplitFormSection } from "@/components/marketing/split-form-section";
-import { MapCtaSection } from "@/components/marketing/map-cta-section";
-import { FloatingPaperPlane } from "@/components/decor/floating-paper-plane";
-import { FloatingSphere } from "@/components/decor/floating-sphere";
-import { socials } from "@/lib/socials";
+import { Hero } from "@/components/organisms/hero";
+import { IconInfoList } from "@/components/molecules/icon-info-list";
+import { SplitFormSection } from "@/components/organisms/split-form-section";
+import { MapCtaSection } from "@/components/organisms/map-cta-section";
+import { FloatingPaperPlane } from "@/components/atoms/floating-paper-plane";
+import { FloatingSphere } from "@/components/atoms/floating-sphere";
+import { socials } from "@/content/socials";
 import { quickContacts, otherWays } from "./constants";
 import "./page.scss";
 
@@ -26,11 +26,7 @@ export default function ContactPage() {
         extraFullWidth
         visual={
           <div className="contact-page__visual">
-            <FloatingSphere
-              size={70}
-              tone="dark"
-              className="absolute bottom-2 left-4"
-            />
+            <FloatingSphere size={70} tone="dark" className="absolute bottom-2 left-4" />
             <FloatingPaperPlane
               size={110}
               delay={0.4}

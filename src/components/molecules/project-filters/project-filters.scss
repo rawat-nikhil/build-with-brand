@@ -1,0 +1,11 @@
+@reference "#globals.css";
+
+.project-filters {
+  @apply flex flex-wrap justify-center gap-2;
+  &__filter {
+    @apply rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:text-white;
+  }
+  &__filter--active {
+    @apply border-brand-violet/40 bg-brand-violet/15 text-brand-violet;
+  }
+}

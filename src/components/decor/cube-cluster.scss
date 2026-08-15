@@ -1,8 +1,0 @@
-@reference "../../app/globals.css";
-
-.cube-cluster {
-  @apply relative;
-  &__top { @apply absolute left-1/2 top-0 -translate-x-1/2; }
-  &__bottom-left { @apply absolute left-0 bottom-2; }
-  &__bottom-right { @apply absolute right-0 bottom-2; }
-}

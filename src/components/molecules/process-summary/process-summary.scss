@@ -1,0 +1,23 @@
+@reference "#globals.css";
+
+.process-summary {
+  @apply grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4;
+  &__item {
+    @apply relative flex flex-col items-center text-center;
+  }
+  &__connector {
+    @apply absolute top-6 left-1/2 hidden h-px w-full -translate-y-1/2 bg-black/10 sm:block;
+  }
+  &__icon-wrap {
+    @apply relative z-10 flex size-12 items-center justify-center rounded-full border-2 border-brand-violet/30 bg-white text-brand-violet;
+  }
+  &__icon {
+    @apply size-5;
+  }
+  &__title {
+    @apply mt-4 text-sm font-semibold text-brand-ink;
+  }
+  &__description {
+    @apply mt-1 text-xs text-brand-ink-secondary;
+  }
+}

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { Code, Percent, Rocket, Search } from "lucide-react";
 
+import type { ProcessSummaryStep } from "@/types";
+
 export const metadata: Metadata = {
   title: "Build With Brand — Digital Studio",
   description:
     "We build digital experiences that build your brand — websites, web apps, e-commerce and UI/UX design.",
 };
 
-export const processSteps = [
+export const processSteps: ProcessSummaryStep[] = [
   {
     number: "01",
     icon: Search,

@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Gem, Play, ShieldCheck, Users, Zap } from "lucide-react";
 
-import { Hero } from "@/components/marketing/hero";
-import { Eyebrow } from "@/components/marketing/eyebrow";
-import { CtaButton } from "@/components/marketing/cta-button";
-import { StatsBar } from "@/components/marketing/stats-bar";
-import { TeamCard } from "@/components/marketing/team-card";
-import { CTASection } from "@/components/marketing/cta-section";
-import { FloatingCube } from "@/components/decor/floating-cube";
-import { FloatingSphere } from "@/components/decor/floating-sphere";
-import { FloatingGlassPanel } from "@/components/decor/floating-glass-panel";
-import { stats } from "@/lib/stats";
+import { Hero } from "@/components/organisms/hero";
+import { Eyebrow } from "@/components/atoms/eyebrow";
+import { CtaButton } from "@/components/atoms/cta-button";
+import { StatsBar } from "@/components/molecules/stats-bar";
+import { TeamCard } from "@/components/molecules/team-card";
+import { CTASection } from "@/components/organisms/cta-section";
+import { FloatingCube } from "@/components/atoms/floating-cube";
+import { FloatingSphere } from "@/components/atoms/floating-sphere";
+import { FloatingGlassPanel } from "@/components/atoms/floating-glass-panel";
+import { stats } from "@/content/stats";
 import "./page.scss";
 
 export const metadata: Metadata = {
@@ -24,12 +24,14 @@ const values = [
   {
     icon: Gem,
     title: "Quality First",
-    description: "We never compromise on quality. Every pixel, every line of code matters.",
+    description:
+      "We never compromise on quality. Every pixel, every line of code matters.",
   },
   {
     icon: Users,
     title: "Client Focused",
-    description: "Your goals are our goals. We work closely with you to deliver real results.",
+    description:
+      "Your goals are our goals. We work closely with you to deliver real results.",
   },
   {
     icon: Zap,
@@ -39,7 +41,8 @@ const values = [
   {
     icon: ShieldCheck,
     title: "Integrity",
-    description: "Honesty and transparency build trust, and trust builds lasting relationships.",
+    description:
+      "Honesty and transparency build trust, and trust builds lasting relationships.",
   },
 ];
 
@@ -72,9 +75,19 @@ export default function AboutPage() {
         }
         visual={
           <div className="about-page__hero-visual">
-            <FloatingGlassPanel width={130} height={170} delay={0.4} className="absolute top-6 left-0" />
+            <FloatingGlassPanel
+              width={130}
+              height={170}
+              delay={0.4}
+              className="absolute top-6 left-0"
+            />
             <FloatingCube size={170} tone="dark" className="absolute right-0 bottom-0" />
-            <FloatingSphere size={60} tone="violet" delay={1} className="absolute top-0 right-10" />
+            <FloatingSphere
+              size={60}
+              tone="violet"
+              delay={1}
+              className="absolute top-0 right-10"
+            />
           </div>
         }
       />
@@ -89,12 +102,12 @@ export default function AboutPage() {
               How it all <span className="about-page__accent">started.</span>
             </h2>
             <p className="about-page__story-body">
-              Build With Brand started with a simple belief — great design and technology can
-              transform businesses.
+              Build With Brand started with a simple belief — great design and technology
+              can transform businesses.
             </p>
             <p className="about-page__story-body-2">
-              What began as a small team of passionate developers and designers has grown into a
-              digital studio trusted by brands across the globe.
+              What began as a small team of passionate developers and designers has grown
+              into a digital studio trusted by brands across the globe.
             </p>
             <Link href="/work" className="about-page__story-link">
               Our Journey
@@ -119,8 +132,8 @@ export default function AboutPage() {
             <div>
               <Eyebrow>Our Values</Eyebrow>
               <h2 className="about-page__section-heading">
-                The principles that guide <span className="about-page__accent">everything</span> we
-                do.
+                The principles that guide{" "}
+                <span className="about-page__accent">everything</span> we do.
               </h2>
             </div>
             <p className="about-page__section-desc">
@@ -148,12 +161,13 @@ export default function AboutPage() {
             <div>
               <Eyebrow>Our Team</Eyebrow>
               <h2 className="about-page__team-heading">
-                A team of builders, thinkers and <span className="about-page__accent">creators.</span>
+                A team of builders, thinkers and{" "}
+                <span className="about-page__accent">creators.</span>
               </h2>
             </div>
             <p className="about-page__team-desc">
-              We&apos;re a tight-knit team of designers, developers and strategists who love what
-              we do and take pride in what we build.
+              We&apos;re a tight-knit team of designers, developers and strategists who
+              love what we do and take pride in what we build.
             </p>
           </div>
 
@@ -175,7 +189,8 @@ export default function AboutPage() {
         tone="light"
         title={
           <>
-            Let&apos;s build something amazing <span className="about-page__accent">together.</span>
+            Let&apos;s build something amazing{" "}
+            <span className="about-page__accent">together.</span>
           </>
         }
         description="Have a project in mind? Let's turn your ideas into powerful digital experiences."
@@ -183,7 +198,12 @@ export default function AboutPage() {
         decor={
           <>
             <FloatingCube size={70} tone="violet" className="about-page__cta-cube-1" />
-            <FloatingSphere size={60} tone="violet" delay={1} className="about-page__cta-sphere-1" />
+            <FloatingSphere
+              size={60}
+              tone="violet"
+              delay={1}
+              className="about-page__cta-sphere-1"
+            />
           </>
         }
       />

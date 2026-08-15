@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
-import { Code, Compass, FlaskConical, Palette, Rocket, Search, ShieldCheck, Target, TrendingUp, Users } from "lucide-react";
+import {
+  Code,
+  Compass,
+  FlaskConical,
+  Palette,
+  Rocket,
+  Search,
+  ShieldCheck,
+  Target,
+  TrendingUp,
+  Users,
+} from "lucide-react";
 
-import { Hero } from "@/components/marketing/hero";
-import { Eyebrow } from "@/components/marketing/eyebrow";
-import { CtaButton } from "@/components/marketing/cta-button";
-import { CTASection } from "@/components/marketing/cta-section";
-import { ProcessExplorer, type ProcessStepData } from "@/components/marketing/process-explorer";
-import { CubeCluster } from "@/components/decor/cube-cluster";
-import { FloatingSphere } from "@/components/decor/floating-sphere";
+import { Hero } from "@/components/organisms/hero";
+import { Eyebrow } from "@/components/atoms/eyebrow";
+import { CtaButton } from "@/components/atoms/cta-button";
+import { CTASection } from "@/components/organisms/cta-section";
+import { ProcessExplorer } from "@/components/organisms/process-explorer";
+import type { ProcessStepData } from "@/types";
+import { CubeCluster } from "@/components/molecules/cube-cluster";
+import { FloatingSphere } from "@/components/atoms/floating-sphere";
 import "./page.scss";
 
 export const metadata: Metadata = {
@@ -40,7 +52,12 @@ const steps: ProcessStepData[] = [
     summary: "We create a strategy, wireframes and roadmap tailored to your project.",
     description:
       "We translate insights into an actionable plan — mapping the strategy, information architecture and project roadmap.",
-    bullets: ["Strategy & roadmap", "Information architecture", "Wireframing", "Timeline & milestones"],
+    bullets: [
+      "Strategy & roadmap",
+      "Information architecture",
+      "Wireframing",
+      "Timeline & milestones",
+    ],
     timeline: "1 Week",
   },
   {
@@ -62,7 +79,12 @@ const steps: ProcessStepData[] = [
     summary: "We build robust, scalable and secure solutions with clean code.",
     description:
       "Our engineers turn designs into fast, reliable and maintainable products using modern best practices.",
-    bullets: ["Frontend & backend development", "API integrations", "Code reviews", "Performance optimization"],
+    bullets: [
+      "Frontend & backend development",
+      "API integrations",
+      "Code reviews",
+      "Performance optimization",
+    ],
     timeline: "3 – 6 Weeks",
   },
   {
@@ -73,7 +95,12 @@ const steps: ProcessStepData[] = [
     summary: "We ensure everything works flawlessly across devices and browsers.",
     description:
       "We rigorously test functionality, performance and accessibility before anything ships.",
-    bullets: ["Cross-browser testing", "QA & bug fixing", "Performance audits", "Accessibility checks"],
+    bullets: [
+      "Cross-browser testing",
+      "QA & bug fixing",
+      "Performance audits",
+      "Accessibility checks",
+    ],
     timeline: "1 Week",
   },
   {
@@ -84,7 +111,12 @@ const steps: ProcessStepData[] = [
     summary: "We deploy your product and support you to grow and scale.",
     description:
       "We handle a smooth launch and stick around to help you measure, iterate and grow.",
-    bullets: ["Deployment & monitoring", "Analytics setup", "Ongoing support", "Growth iterations"],
+    bullets: [
+      "Deployment & monitoring",
+      "Analytics setup",
+      "Ongoing support",
+      "Growth iterations",
+    ],
     timeline: "Ongoing",
   },
 ];
@@ -119,7 +151,8 @@ export default function ProcessPage() {
         eyebrow="Our Process"
         title={
           <>
-            A proven process. Built for <span className="process-page__accent">results.</span>
+            A proven process. Built for{" "}
+            <span className="process-page__accent">results.</span>
           </>
         }
         description="We follow a simple, transparent and collaborative process to turn your ideas into impactful digital products."
@@ -132,11 +165,12 @@ export default function ProcessPage() {
           <div className="process-page__explorer-header">
             <Eyebrow className="process-page__explorer-eyebrow">How We Work</Eyebrow>
             <h2 className="process-page__explorer-heading">
-              From idea to impact, <span className="process-page__accent">step by step.</span>
+              From idea to impact,{" "}
+              <span className="process-page__accent">step by step.</span>
             </h2>
             <p className="process-page__explorer-desc">
-              Our structured approach ensures clarity, quality and consistency at every stage of
-              your project.
+              Our structured approach ensures clarity, quality and consistency at every
+              stage of your project.
             </p>
           </div>
 
@@ -151,11 +185,12 @@ export default function ProcessPage() {
           <div className="process-page__why-header">
             <Eyebrow className="process-page__why-eyebrow">Why Our Process Works</Eyebrow>
             <h2 className="process-page__why-heading">
-              Designed for clarity. Built for <span className="process-page__accent">success.</span>
+              Designed for clarity. Built for{" "}
+              <span className="process-page__accent">success.</span>
             </h2>
             <p className="process-page__why-desc">
-              Our process is collaborative, agile and transparent — keeping you informed and
-              involved from start to finish.
+              Our process is collaborative, agile and transparent — keeping you informed
+              and involved from start to finish.
             </p>
           </div>
 
@@ -187,8 +222,17 @@ export default function ProcessPage() {
         }
         decor={
           <>
-            <FloatingSphere size={70} tone="dark" className="process-page__cta-sphere-1" />
-            <FloatingSphere size={50} tone="violet" delay={1} className="process-page__cta-sphere-2" />
+            <FloatingSphere
+              size={70}
+              tone="dark"
+              className="process-page__cta-sphere-1"
+            />
+            <FloatingSphere
+              size={50}
+              tone="violet"
+              delay={1}
+              className="process-page__cta-sphere-2"
+            />
           </>
         }
       />

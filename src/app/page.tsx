@@ -1,12 +1,12 @@
-import { HomeHero } from "@/components/marketing/home-hero";
-import { HomeServicesSection } from "@/components/marketing/home-services-section";
-import { HomeProcessSection } from "@/components/marketing/home-process-section";
-import { StatsBar } from "@/components/marketing/stats-bar";
-import { CTASection } from "@/components/marketing/cta-section";
-import { CtaButton } from "@/components/marketing/cta-button";
-import { FloatingCube } from "@/components/decor/floating-cube";
-import { FloatingSphere } from "@/components/decor/floating-sphere";
-import { stats } from "@/lib/stats";
+import { HomeHero } from "@/components/organisms/home-hero";
+import { HomeServicesSection } from "@/components/organisms/home-services-section";
+import { HomeProcessSection } from "@/components/organisms/home-process-section";
+import { StatsBar } from "@/components/molecules/stats-bar";
+import { CTASection } from "@/components/organisms/cta-section";
+import { CtaButton } from "@/components/atoms/cta-button";
+import { FloatingCube } from "@/components/atoms/floating-cube";
+import { FloatingSphere } from "@/components/atoms/floating-sphere";
+import { stats } from "@/content/stats";
 import { processSteps } from "./constants";
 import "./page.scss";
 
@@ -31,7 +31,12 @@ export default function Home() {
         decor={
           <>
             <FloatingCube size={90} tone="dark" className="home-page__cta-cube" />
-            <FloatingSphere size={70} tone="dark" delay={1} className="home-page__cta-sphere" />
+            <FloatingSphere
+              size={70}
+              tone="dark"
+              delay={1}
+              className="home-page__cta-sphere"
+            />
           </>
         }
       />

@@ -1,0 +1,38 @@
+@reference "#globals.css";
+
+.home-hero {
+  .hero__bg-image {
+    @apply hidden object-contain object-right lg:block;
+    mix-blend-mode: lighten;
+  }
+  .hero__bg-overlay {
+    @apply absolute inset-0 hidden lg:block;
+    background-image: linear-gradient(
+      to right,
+      var(--brand-bg-dark) 0%,
+      color-mix(in srgb, var(--brand-bg-dark) 80%, transparent) 38%,
+      transparent 72%
+    );
+  }
+  &__accent {
+    @apply text-brand-violet;
+  }
+  &__eyebrow {
+    @apply mb-2 inline-flex w-fit items-center gap-2 py-1.5 text-xs text-white/70;
+  }
+  &__dot {
+    @apply size-1.5 rounded-full bg-brand-violet;
+  }
+  &__trusted {
+    @apply mt-10 flex items-center gap-3;
+  }
+  &__avatars {
+    @apply flex -space-x-3;
+  }
+  &__avatar {
+    @apply size-9 rounded-full border-2 border-brand-bg-dark bg-gradient-to-br from-white/30 to-white/5 inline-flex items-center justify-center text-2xs font-semibold text-white/80 tracking-wide;
+  }
+  &__trusted-text {
+    @apply text-sm text-white/50;
+  }
+}

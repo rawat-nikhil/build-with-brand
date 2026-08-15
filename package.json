@@ -2,14 +2,21 @@
   "name": "build-with-brand",
   "version": "0.1.0",
   "private": true,
+  "imports": {
+    "#globals.css": "./src/styles/globals.css"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format:check": "prettier --check .",
+    "fix": "prettier --write . && eslint --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
+    "@vis.gl/react-google-maps": "^1.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^13.0.0",
@@ -29,6 +36,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "prettier": "3.9.6",
     "sass": "^1.102.0",
     "tailwindcss": "^4",
     "typescript": "^5"

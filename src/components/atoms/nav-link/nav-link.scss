@@ -1,0 +1,14 @@
+@reference "#globals.css";
+
+.nav-link {
+  @apply text-sm font-medium text-white/80 transition-colors;
+  &--desktop {
+    @apply relative py-2 uppercase hover:text-white;
+  }
+  &--active {
+    @apply text-brand-violet;
+  }
+  &__indicator {
+    @apply absolute -bottom-0.5 left-1/2 size-1 -translate-x-1/2 rounded-full bg-brand-violet;
+  }
+}
