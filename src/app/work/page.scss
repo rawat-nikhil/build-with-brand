@@ -1,0 +1,26 @@
+@reference "../globals.css";
+
+.work-page {
+  &__accent { @apply text-brand-violet; }
+  &__hero-visual { @apply relative flex size-72 items-center justify-center; }
+
+  &__projects { @apply bg-brand-bg-dark px-6 pb-20 text-white; }
+  &__projects-inner { @apply mx-auto max-w-7xl; }
+
+  &__process { @apply bg-brand-bg-light px-6 py-20; }
+  &__process-inner { @apply mx-auto max-w-7xl; }
+  &__process-layout { @apply flex flex-col justify-between gap-8 lg:flex-row lg:items-center; }
+  &__process-text { @apply max-w-sm; }
+  &__process-heading { @apply mt-3 text-3xl font-semibold text-brand-ink; }
+  &__process-desc { @apply mt-4 text-sm text-brand-ink-secondary; }
+  &__process-cta { @apply mt-6; }
+  &__process-summary { @apply flex-1; }
+
+  &__clients { @apply bg-brand-bg-dark px-6 py-14 text-white; }
+  &__clients-inner { @apply mx-auto max-w-7xl; }
+  &__clients-label { @apply text-center text-xs font-semibold tracking-eyebrow text-white/40 uppercase; }
+  &__clients-list { @apply mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-4; }
+  &__client-item { @apply flex items-center gap-2 text-white/40; }
+  &__client-icon { @apply size-4; }
+  &__client-name { @apply text-sm font-medium; }
+}

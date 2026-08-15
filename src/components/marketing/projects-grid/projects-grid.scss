@@ -1,0 +1,9 @@
+@reference "../../../app/globals.css";
+
+.projects-grid {
+  &__filters { @apply flex flex-wrap justify-center gap-2; }
+  &__filter { @apply rounded-full border border-white/10 px-4 py-2 text-sm font-medium transition-colors text-white/60 hover:text-white; }
+  &__filter--active { @apply border-brand-violet/40 bg-brand-violet/15 text-brand-violet; }
+  &__grid { @apply mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3; }
+  &__empty { @apply col-span-full py-12 text-center text-sm text-white/40; }
+}

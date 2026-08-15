@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import "./floating-sphere.scss";
 
 interface FloatingSphereProps {
   size?: number;
@@ -28,7 +29,7 @@ export function FloatingSphere({
 
   return (
     <motion.div
-      className={cn("rounded-full", className)}
+      className={cn("floating-sphere", className)}
       style={{
         width: size,
         height: size,

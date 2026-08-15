@@ -59,6 +59,18 @@
   --color-brand-ink-secondary: var(--brand-ink-secondary);
   --color-brand-white: var(--brand-white);
   --color-brand-muted-dark: var(--brand-muted-dark);
+  --color-brand-bg-panel: var(--brand-bg-panel);
+  --color-brand-bg-canvas: var(--brand-bg-canvas);
+  --color-brand-bg-dark-mid: var(--brand-bg-dark-mid);
+  --color-brand-lavender-light: var(--brand-lavender-light);
+  --text-2xs: 0.625rem;
+  --text-button-sm: 0.8125rem;
+  --tracking-eyebrow: 0.2em;
+  --tracking-eyebrow-sm: 0.15em;
+  --leading-tighter: 1.1;
+  --shadow-violet-glow: 0 8px 24px -8px rgba(124, 92, 252, 0.6);
+  --shadow-pin-glow: 0 0 30px rgba(139, 92, 246, 0.6);
+  --drop-shadow-violet-halo: 0 0 30px rgba(139, 92, 246, 0.45);
 }
 
 @layer base {

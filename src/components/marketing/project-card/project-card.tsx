@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import "./project-card.scss";
 
 interface ProjectCardProps {
   category: string;
@@ -11,13 +12,6 @@ interface ProjectCardProps {
   accent?: "violet" | "amber" | "sky" | "emerald";
 }
 
-const accentGradients: Record<NonNullable<ProjectCardProps["accent"]>, string> = {
-  violet: "from-brand-violet/40 via-brand-indigo/30 to-black/40",
-  amber: "from-amber-500/30 via-orange-500/20 to-black/40",
-  sky: "from-sky-500/30 via-blue-500/20 to-black/40",
-  emerald: "from-emerald-500/30 via-teal-500/20 to-black/40",
-};
-
 export function ProjectCard({
   category,
   title,
@@ -26,27 +20,17 @@ export function ProjectCard({
   accent = "violet",
 }: ProjectCardProps) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
-      <div
-        className={cn(
-          "flex aspect-[4/3] items-center justify-center bg-gradient-to-br text-sm font-medium text-white/70",
-          accentGradients[accent]
-        )}
-      >
+    <div className="project-card">
+      <div className={cn("project-card__preview", `project-card__preview--${accent}`)}>
         {title}
       </div>
-      <div className="p-5">
-        <p className="text-xs font-semibold tracking-wide text-brand-violet uppercase">
-          {category}
-        </p>
-        <h3 className="mt-2 text-base font-semibold text-white">{title}</h3>
-        <p className="mt-2 text-sm text-white/50">{description}</p>
-        <Link
-          href={href}
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-violet hover:underline"
-        >
+      <div className="project-card__body">
+        <p className="project-card__category">{category}</p>
+        <h3 className="project-card__title">{title}</h3>
+        <p className="project-card__description">{description}</p>
+        <Link href={href} className="project-card__link">
           View Case Study
-          <ArrowRight className="size-4" />
+          <ArrowRight className="project-card__link-icon" />
         </Link>
       </div>
     </div>

@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import "./floating-glass-panel.scss";
 
 interface FloatingGlassPanelProps {
   width?: number;
@@ -23,7 +24,7 @@ export function FloatingGlassPanel({
 
   return (
     <motion.div
-      className={cn("rounded-2xl border border-white/15 backdrop-blur-md", className)}
+      className={cn("floating-glass-panel", className)}
       style={{
         width,
         height,

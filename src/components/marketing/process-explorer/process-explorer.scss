@@ -1,0 +1,19 @@
+@reference "../../../app/globals.css";
+
+.process-explorer {
+  @apply grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)];
+  &__steps { @apply flex flex-col gap-2; }
+  &__panel { @apply rounded-2xl border border-black/5 bg-white p-8 shadow-sm; }
+  &__step-label { @apply text-xs font-semibold tracking-eyebrow text-brand-violet uppercase; }
+  &__step-title { @apply mt-2 text-2xl font-semibold text-brand-ink; }
+  &__step-desc { @apply mt-4 text-sm text-brand-ink-secondary; }
+  &__bullets-label { @apply mt-6 text-xs font-semibold tracking-eyebrow-sm text-brand-violet uppercase; }
+  &__bullets { @apply mt-3 grid gap-2 sm:grid-cols-2; }
+  &__bullet { @apply flex items-center gap-2 text-sm text-brand-ink-secondary; }
+  &__bullet-icon { @apply size-4 shrink-0 text-brand-violet; }
+  &__visual { @apply mt-6 flex aspect-video w-full items-center justify-center rounded-xl bg-gradient-to-br from-brand-violet/10 via-brand-bg-light to-brand-violet/5; }
+  &__timeline { @apply mt-6 inline-flex items-center gap-3 rounded-lg bg-brand-bg-light px-4 py-3; }
+  &__timeline-icon { @apply size-5 text-brand-violet; }
+  &__timeline-label { @apply text-xs text-brand-ink-secondary; }
+  &__timeline-value { @apply text-sm font-semibold text-brand-ink; }
+}

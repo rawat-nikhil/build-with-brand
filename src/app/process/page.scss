@@ -1,0 +1,29 @@
+@reference "../globals.css";
+
+.process-page {
+  &__accent { @apply text-brand-violet; }
+
+  &__explorer { @apply bg-brand-bg-light px-6 py-20; }
+  &__explorer-inner { @apply mx-auto max-w-7xl; }
+  &__explorer-header { @apply mx-auto max-w-2xl text-center; }
+  &__explorer-eyebrow { @apply text-center; }
+  &__explorer-heading { @apply mt-3 text-3xl font-semibold text-brand-ink sm:text-4xl; }
+  &__explorer-desc { @apply mt-4 text-sm text-brand-ink-secondary; }
+  &__explorer-content { @apply mt-14; }
+
+  &__why { @apply bg-white px-6 py-20; }
+  &__why-inner { @apply mx-auto max-w-7xl; }
+  &__why-header { @apply mx-auto max-w-2xl text-center; }
+  &__why-eyebrow { @apply text-center; }
+  &__why-heading { @apply mt-3 text-3xl font-semibold text-brand-ink sm:text-4xl; }
+  &__why-desc { @apply mt-4 text-sm text-brand-ink-secondary; }
+  &__why-grid { @apply mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4; }
+  &__why-card { @apply rounded-2xl border border-black/5 p-6 text-center; }
+  &__why-icon-wrap { @apply mx-auto flex size-12 items-center justify-center rounded-xl bg-brand-violet/10 text-brand-violet; }
+  &__why-icon { @apply size-5; }
+  &__why-title { @apply mt-4 text-base font-semibold text-brand-ink; }
+  &__why-desc-text { @apply mt-2 text-sm text-brand-ink-secondary; }
+
+  &__cta-sphere-1 { @apply absolute bottom-8 left-10 hidden md:block; }
+  &__cta-sphere-2 { @apply absolute top-10 right-16 hidden md:block; }
+}

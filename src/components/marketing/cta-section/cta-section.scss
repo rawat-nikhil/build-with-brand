@@ -1,0 +1,15 @@
+@reference "../../../app/globals.css";
+
+.cta-section {
+  @apply relative overflow-hidden px-6 py-20;
+  &--dark { @apply bg-brand-bg-dark text-white; }
+  &--light { @apply bg-gradient-to-br from-brand-lavender-light to-brand-bg-light text-brand-ink; }
+  &--gradient { @apply bg-gradient-to-br from-brand-violet-2 to-brand-indigo text-white; }
+  &__inner { @apply relative mx-auto flex max-w-3xl flex-col items-center gap-6 text-center; }
+  &__title { @apply text-3xl font-semibold text-balance sm:text-4xl; }
+  &__description { @apply max-w-xl text-sm; }
+  &__description--light { @apply text-brand-ink-secondary; }
+  &__description--dark { @apply text-white/70; }
+  &__description--gradient { @apply text-white/70; }
+  &__actions { @apply flex flex-wrap items-center justify-center gap-4; }
+}

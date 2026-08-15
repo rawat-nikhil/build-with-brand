@@ -1,0 +1,6 @@
+@reference "./globals.css";
+
+.layout {
+  &__body { @apply flex min-h-full flex-col; }
+  &__main { @apply flex flex-1 flex-col; }
+}

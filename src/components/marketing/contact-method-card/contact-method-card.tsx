@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import "./contact-method-card.scss";
 
 interface ContactMethodCardProps {
   icon: LucideIcon;
@@ -19,31 +20,22 @@ export function ContactMethodCard({
   tone = "dark",
   className,
 }: ContactMethodCardProps) {
+  const toneModifier = tone === "dark" ? "contact-method-card--dark" : "contact-method-card--light";
+
   return (
-    <div
-      className={cn(
-        "flex items-start gap-3 rounded-xl p-4",
-        tone === "dark" ? "bg-white/5" : "border border-black/5 bg-brand-bg-light",
-        className
-      )}
-    >
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-violet/15 text-brand-violet">
-        <Icon className="size-5" />
+    <div className={cn("contact-method-card", toneModifier, className)}>
+      <span className="contact-method-card__icon-wrap">
+        <Icon className="contact-method-card__icon" />
       </span>
-      <div className="min-w-0">
-        <p
-          className={cn(
-            "text-sm font-semibold",
-            tone === "dark" ? "text-white" : "text-brand-ink"
-          )}
-        >
+      <div className="contact-method-card__body">
+        <p className={cn("contact-method-card__label", `contact-method-card__label--${tone}`)}>
           {label}
         </p>
-        <p className={cn("text-sm", tone === "dark" ? "text-white/60" : "text-brand-ink-secondary")}>
+        <p className={cn("contact-method-card__value", `contact-method-card__value--${tone}`)}>
           {value}
         </p>
         {sub && (
-          <p className={cn("mt-0.5 text-xs", tone === "dark" ? "text-white/35" : "text-brand-ink-secondary/70")}>
+          <p className={cn("contact-method-card__sub", `contact-method-card__sub--${tone}`)}>
             {sub}
           </p>
         )}

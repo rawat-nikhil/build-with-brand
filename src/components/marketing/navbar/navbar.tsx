@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { CtaButton } from "@/components/marketing/cta-button";
+import "./navbar.scss";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -28,11 +29,11 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-bg-dark/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between py-6">
+    <header className="navbar">
+      <div className="navbar__inner">
         <Link
           href="/"
-          className="flex items-center"
+          className="navbar__logo-link"
           onClick={() => setOpen(false)}
         >
           <Image
@@ -40,13 +41,13 @@ export function Navbar() {
             alt="Build with Brand"
             width={645}
             height={140}
-            className="h-8 w-auto"
+            className="navbar__logo"
             priority
           />
         </Link>
 
-        <div className="flex justify-between gap-5">
-          <nav className="hidden items-center gap-8 md:flex">
+        <div className="navbar__controls">
+          <nav className="navbar__nav">
             {NAV_LINKS.map((link) => {
               const active = isActive(pathname, link.href);
               return (
@@ -54,22 +55,18 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "relative py-2 text-sm font-medium transition-colors uppercase",
-                    active
-                      ? "text-brand-violet"
-                      : "text-white/80 hover:text-white",
+                    "navbar__nav-link",
+                    active && "navbar__nav-link--active"
                   )}
                 >
                   {link.label}
-                  {active && (
-                    <span className="absolute -bottom-0.5 left-1/2 size-1 -translate-x-1/2 rounded-full bg-brand-violet" />
-                  )}
+                  {active && <span className="navbar__nav-indicator" />}
                 </Link>
               );
             })}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="navbar__cta-wrap">
             <CtaButton href="/contact" size="sm">
               Let&apos;s Build
             </CtaButton>
@@ -77,7 +74,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="text-white md:hidden"
+            className="navbar__mobile-toggle"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -88,8 +85,8 @@ export function Navbar() {
       </div>
 
       {open && (
-        <nav className="border-t border-white/10 bg-brand-bg-dark px-6 py-4 md:hidden">
-          <div className="flex flex-col gap-4">
+        <nav className="navbar__mobile-nav">
+          <div className="navbar__mobile-nav-inner">
             {NAV_LINKS.map((link) => {
               const active = isActive(pathname, link.href);
               return (
@@ -98,8 +95,8 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "text-sm font-medium",
-                    active ? "text-brand-violet" : "text-white/80",
+                    "navbar__mobile-nav-link",
+                    active && "navbar__mobile-nav-link--active"
                   )}
                 >
                   {link.label}

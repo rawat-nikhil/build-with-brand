@@ -1,0 +1,12 @@
+@reference "../../../app/globals.css";
+
+.cta-button {
+  @apply inline-flex items-center justify-center gap-2 rounded-full font-medium whitespace-nowrap transition-colors;
+  &--md { @apply px-6 py-3 text-sm; }
+  &--sm { @apply px-5 py-2.5 text-button-sm; }
+  &--primary { @apply bg-gradient-to-r from-brand-violet-2 to-brand-indigo text-white shadow-violet-glow hover:opacity-90; }
+  &--dark-solid { @apply bg-white text-brand-ink hover:bg-white/90; }
+  &--outline-dark { @apply border border-white/25 text-white hover:bg-white/10; }
+  &--outline-light { @apply border border-brand-ink/15 text-brand-ink hover:bg-brand-ink/5; }
+  &__icon { @apply size-4; }
+}

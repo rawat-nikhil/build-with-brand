@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { ProjectCard } from "@/components/marketing/project-card";
+import "./projects-grid.scss";
 
 export interface Project {
   category: "Website" | "Web Application" | "E-commerce" | "UI/UX Design";
@@ -32,17 +33,15 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center gap-2">
+      <div className="projects-grid__filters">
         {FILTERS.map((filter) => (
           <button
             key={filter}
             type="button"
             onClick={() => setActive(filter)}
             className={cn(
-              "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
-              active === filter
-                ? "border-brand-violet/40 bg-brand-violet/15 text-brand-violet"
-                : "border-white/10 text-white/60 hover:text-white"
+              "projects-grid__filter",
+              active === filter && "projects-grid__filter--active"
             )}
           >
             {filter}
@@ -50,12 +49,12 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
         ))}
       </div>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="projects-grid__grid">
         {filtered.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
         {filtered.length === 0 && (
-          <p className="col-span-full py-12 text-center text-sm text-white/40">
+          <p className="projects-grid__empty">
             No projects in this category yet.
           </p>
         )}

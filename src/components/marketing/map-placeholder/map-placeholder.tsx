@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import "./map-placeholder.scss";
 
 const LABELS = [
   { label: "Paschim Vihar", top: "8%", left: "8%" },
@@ -15,9 +16,9 @@ const LABELS = [
 
 export function MapPlaceholder() {
   return (
-    <div className="relative h-full min-h-[320px] w-full overflow-hidden bg-[#0d0d12]">
+    <div className="map-placeholder">
       <div
-        className="absolute inset-0 opacity-40"
+        className="map-placeholder__grid"
         style={{
           backgroundImage:
             "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
@@ -27,16 +28,16 @@ export function MapPlaceholder() {
       {LABELS.map((item) => (
         <span
           key={item.label}
-          className="absolute text-[0.65rem] tracking-wide text-white/25 uppercase"
+          className="map-placeholder__label"
           style={{ top: item.top, left: item.left }}
         >
           {item.label}
         </span>
       ))}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <span className="absolute inset-0 -m-4 animate-ping rounded-full bg-brand-violet/30" />
-        <span className="relative flex size-9 items-center justify-center rounded-full bg-brand-violet shadow-[0_0_30px_rgba(139,92,246,0.6)]">
-          <MapPin className="size-5 fill-white text-white" />
+      <div className="map-placeholder__pin-wrapper">
+        <span className="map-placeholder__pin-pulse" />
+        <span className="map-placeholder__pin">
+          <MapPin className="map-placeholder__pin-icon" />
         </span>
       </div>
     </div>

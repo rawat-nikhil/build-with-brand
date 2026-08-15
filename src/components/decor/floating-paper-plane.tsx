@@ -4,6 +4,7 @@ import { useId } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import "./floating-paper-plane.scss";
 
 interface FloatingPaperPlaneProps {
   size?: number;
@@ -26,7 +27,7 @@ export function FloatingPaperPlane({
       viewBox="0 0 64 64"
       width={size}
       height={size}
-      className={cn("drop-shadow-[0_0_30px_rgba(139,92,246,0.45)]", className)}
+      className={cn("floating-paper-plane", className)}
       animate={reduceMotion ? undefined : { y: [0, -14, 0], x: [0, 6, 0], rotate: [-8, -2, -8] }}
       transition={{ duration, repeat: Infinity, ease: "easeInOut", delay }}
     >
