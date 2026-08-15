@@ -1,6 +1,19 @@
 @reference "#globals.css";
 
 .home-hero {
+  .hero__bg-image {
+    @apply object-contain object-right;
+    mix-blend-mode: lighten;
+  }
+  .hero__bg-overlay {
+    @apply absolute inset-0;
+    background-image: linear-gradient(
+      to right,
+      var(--brand-bg-dark) 0%,
+      color-mix(in srgb, var(--brand-bg-dark) 80%, transparent) 38%,
+      transparent 72%
+    );
+  }
   &__accent {
     @apply text-brand-violet;
   }

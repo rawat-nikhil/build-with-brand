@@ -1,6 +1,5 @@
 import { Hero } from "@/components/organisms/hero";
 import { CtaButton } from "@/components/atoms/cta-button";
-import { PaginationDots } from "@/components/atoms/pagination-dots";
 
 import "./home-hero.scss";
 
@@ -52,8 +51,7 @@ export function HomeHero() {
           </p>
         </div>
       }
-      visual={<PaginationDots />}
-      className="min-h-128 pt-10"
+      className="home-hero min-h-128 pt-10"
     />
   );
 }

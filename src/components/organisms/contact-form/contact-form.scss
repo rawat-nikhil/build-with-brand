@@ -15,7 +15,7 @@
     @apply max-w-sm text-sm text-brand-ink-secondary;
   }
   &__submit {
-    @apply inline-flex w-fit items-center justify-center gap-2 rounded-full bg-linear-to-r from-brand-violet-2 to-brand-indigo px-6 py-3 text-sm font-medium text-white shadow-violet-glow transition-opacity hover:opacity-90;
+    @apply inline-flex w-fit items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-violet-2 to-brand-indigo px-6 py-3 text-sm font-medium text-white shadow-violet-glow transition-opacity hover:opacity-90;
   }
   &__submit-icon {
     @apply size-4;

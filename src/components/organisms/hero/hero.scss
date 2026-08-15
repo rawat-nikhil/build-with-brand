@@ -6,7 +6,7 @@
     @apply object-contain object-right;
   }
   &__bg-overlay {
-    @apply absolute inset-0 bg-linear-to-r from-brand-bg-dark via-brand-bg-dark/70 to-transparent;
+    @apply absolute inset-0 bg-gradient-to-r from-brand-bg-dark via-brand-bg-dark/70 to-transparent;
   }
   &__content {
     @apply relative z-10 mx-auto max-w-7xl;
