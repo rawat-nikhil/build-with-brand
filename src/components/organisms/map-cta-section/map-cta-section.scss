@@ -1,7 +1,7 @@
 @reference "#globals.css";
 
 .map-cta-section {
-  @apply grid max-w-full grid-cols-1 lg:grid-cols-2;
+  @apply grid max-w-full h-auto lg:h-130 grid-cols-1 lg:grid-cols-2;
 
   &__panel {
     @apply flex flex-col justify-center gap-4 bg-brand-bg-panel px-6 py-16 text-white sm:px-10;
