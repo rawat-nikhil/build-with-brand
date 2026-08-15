@@ -1,0 +1,13 @@
+@reference "#globals.css";
+
+.footer-link-column {
+  &__heading {
+    @apply text-sm font-semibold text-white;
+  }
+  &__list {
+    @apply mt-4 flex flex-col gap-3 text-sm;
+  }
+  &__link {
+    @apply hover:text-white;
+  }
+}

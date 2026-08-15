@@ -1,19 +1,30 @@
 import type { Metadata } from "next";
-import { Aperture, Circle, Code, Compass, Hexagon, Rocket, Search, Sparkle } from "lucide-react";
+import {
+  Aperture,
+  Circle,
+  Code,
+  Compass,
+  Hexagon,
+  Rocket,
+  Search,
+  Sparkle,
+} from "lucide-react";
 
-import { Hero } from "@/components/marketing/hero";
-import { Eyebrow } from "@/components/marketing/eyebrow";
-import { CtaButton } from "@/components/marketing/cta-button";
-import { ProcessSummary } from "@/components/marketing/process-summary";
-import { CTASection } from "@/components/marketing/cta-section";
-import { ProjectsGrid, type Project } from "@/components/marketing/projects-grid";
-import { FloatingSphere } from "@/components/decor/floating-sphere";
-import { FloatingGlassPanel } from "@/components/decor/floating-glass-panel";
+import { Hero } from "@/components/organisms/hero";
+import { Eyebrow } from "@/components/atoms/eyebrow";
+import { CtaButton } from "@/components/atoms/cta-button";
+import { ProcessSummary } from "@/components/molecules/process-summary";
+import { CTASection } from "@/components/organisms/cta-section";
+import { ProjectsGrid } from "@/components/organisms/projects-grid";
+import type { Project } from "@/types";
+import { FloatingSphere } from "@/components/atoms/floating-sphere";
+import { FloatingGlassPanel } from "@/components/atoms/floating-glass-panel";
 import "./page.scss";
 
 export const metadata: Metadata = {
   title: "Work — Build With Brand",
-  description: "Ideas brought to life. A selection of websites, apps and products we've built.",
+  description:
+    "Ideas brought to life. A selection of websites, apps and products we've built.",
 };
 
 const projects: Project[] = [
@@ -50,7 +61,8 @@ const projects: Project[] = [
   {
     category: "Website",
     title: "Studio Vertex",
-    description: "Creative agency website built to showcase work and attract high-value clients.",
+    description:
+      "Creative agency website built to showcase work and attract high-value clients.",
     accent: "emerald",
   },
 ];
@@ -98,16 +110,32 @@ export default function WorkPage() {
         eyebrow="Our Work"
         title={
           <>
-            Ideas brought to life. Impact that <span className="work-page__accent">lasts.</span>
+            Ideas brought to life. Impact that{" "}
+            <span className="work-page__accent">lasts.</span>
           </>
         }
         description="We partner with ambitious businesses and creators to design and build digital products that solve real problems and drive meaningful growth."
         actions={<CtaButton href="/contact">Start Your Project</CtaButton>}
         visual={
           <div className="work-page__hero-visual">
-            <FloatingGlassPanel width={150} height={110} delay={0.3} className="absolute top-4 left-4" />
-            <FloatingGlassPanel width={140} height={100} delay={0.8} className="absolute right-2 bottom-8" />
-            <FloatingSphere size={50} tone="violet" delay={1.2} className="absolute right-8 top-0" />
+            <FloatingGlassPanel
+              width={150}
+              height={110}
+              delay={0.3}
+              className="absolute top-4 left-4"
+            />
+            <FloatingGlassPanel
+              width={140}
+              height={100}
+              delay={0.8}
+              className="absolute right-2 bottom-8"
+            />
+            <FloatingSphere
+              size={50}
+              tone="violet"
+              delay={1.2}
+              className="absolute right-8 top-0"
+            />
           </div>
         }
       />
@@ -124,12 +152,19 @@ export default function WorkPage() {
             <div className="work-page__process-text">
               <Eyebrow>Our Approach</Eyebrow>
               <h2 className="work-page__process-heading">
-                A proven process. Built for <span className="work-page__accent">results.</span>
+                A proven process. Built for{" "}
+                <span className="work-page__accent">results.</span>
               </h2>
               <p className="work-page__process-desc">
-                We follow a structured approach to turn ideas into impactful digital products.
+                We follow a structured approach to turn ideas into impactful digital
+                products.
               </p>
-              <CtaButton href="/process" variant="outline-light" size="sm" className="work-page__process-cta">
+              <CtaButton
+                href="/process"
+                variant="outline-light"
+                size="sm"
+                className="work-page__process-cta"
+              >
                 Our Process
               </CtaButton>
             </div>

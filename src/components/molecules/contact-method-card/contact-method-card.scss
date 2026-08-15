@@ -1,0 +1,47 @@
+@reference "#globals.css";
+
+.contact-method-card {
+  @apply flex items-start gap-3 rounded-xl p-4;
+  &--dark {
+    @apply bg-white/5;
+  }
+  &--light {
+    @apply border border-black/5 bg-brand-bg-light;
+  }
+  &__icon-wrap {
+    @apply flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-violet/15 text-brand-violet;
+  }
+  &__icon {
+    @apply size-5;
+  }
+  &__body {
+    @apply min-w-0;
+  }
+  &__label {
+    @apply text-sm font-semibold;
+  }
+  &__label--dark {
+    @apply text-white;
+  }
+  &__label--light {
+    @apply text-brand-ink;
+  }
+  &__value {
+    @apply text-sm;
+  }
+  &__value--dark {
+    @apply text-white/60;
+  }
+  &__value--light {
+    @apply text-brand-ink-secondary;
+  }
+  &__sub {
+    @apply mt-0.5 text-xs;
+  }
+  &__sub--dark {
+    @apply text-white/35;
+  }
+  &__sub--light {
+    @apply text-brand-ink-secondary/70;
+  }
+}

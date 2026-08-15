@@ -1,0 +1,25 @@
+@reference "#globals.css";
+
+.icon-info-list {
+  @apply mt-10 grid gap-4 sm:grid-cols-3;
+
+  &__item {
+    @apply flex items-center gap-3;
+  }
+
+  &__icon {
+    @apply flex size-11 shrink-0 items-center justify-center rounded-lg bg-white/5 text-brand-violet;
+  }
+
+  &__content {
+    @apply min-w-0;
+  }
+
+  &__label {
+    @apply text-sm font-semibold text-white;
+  }
+
+  &__value {
+    @apply text-sm text-white/50;
+  }
+}

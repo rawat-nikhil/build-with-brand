@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Cloud, Phone, Rocket, Settings, Target, TrendingUp } from "lucide-react";
 
-import { Hero } from "@/components/marketing/hero";
-import { Eyebrow } from "@/components/marketing/eyebrow";
-import { CtaButton } from "@/components/marketing/cta-button";
-import { ServiceCard } from "@/components/marketing/service-card";
-import { CTASection } from "@/components/marketing/cta-section";
-import { FloatingCube } from "@/components/decor/floating-cube";
-import { FloatingSphere } from "@/components/decor/floating-sphere";
-import { services } from "@/lib/services";
+import { Hero } from "@/components/organisms/hero";
+import { Eyebrow } from "@/components/atoms/eyebrow";
+import { CtaButton } from "@/components/atoms/cta-button";
+import { ServiceCard } from "@/components/molecules/service-card";
+import { CTASection } from "@/components/organisms/cta-section";
+import { FloatingCube } from "@/components/atoms/floating-cube";
+import { FloatingSphere } from "@/components/atoms/floating-sphere";
+import { services } from "@/content/services";
 import "./page.scss";
 
 export const metadata: Metadata = {
@@ -44,9 +44,27 @@ function ServicesHeroVisual() {
   return (
     <div className="services-page__hero-visual">
       <FloatingCube size={150} tone="violet" duration={8} className="relative z-10" />
-      <FloatingCube size={70} tone="dark" duration={7} delay={0.4} className="absolute bottom-4 left-2" />
-      <FloatingCube size={60} tone="dark" duration={9} delay={1} className="absolute right-0 bottom-10" />
-      <FloatingCube size={50} tone="dark" duration={10} delay={1.6} className="absolute top-2 right-6" />
+      <FloatingCube
+        size={70}
+        tone="dark"
+        duration={7}
+        delay={0.4}
+        className="absolute bottom-4 left-2"
+      />
+      <FloatingCube
+        size={60}
+        tone="dark"
+        duration={9}
+        delay={1}
+        className="absolute right-0 bottom-10"
+      />
+      <FloatingCube
+        size={50}
+        tone="dark"
+        duration={10}
+        delay={1.6}
+        className="absolute top-2 right-6"
+      />
     </div>
   );
 }
@@ -58,7 +76,8 @@ export default function ServicesPage() {
         eyebrow="Our Services"
         title={
           <>
-            Digital solutions that drive <span className="services-page__accent">real growth.</span>
+            Digital solutions that drive{" "}
+            <span className="services-page__accent">real growth.</span>
           </>
         }
         description="We design and build digital products that are modern, scalable and tailored to your business goals."
@@ -97,7 +116,8 @@ export default function ServicesPage() {
             <div>
               <Eyebrow>What We Do</Eyebrow>
               <h2 className="services-page__section-heading">
-                Services that power your <span className="services-page__accent">digital growth.</span>
+                Services that power your{" "}
+                <span className="services-page__accent">digital growth.</span>
               </h2>
             </div>
             <p className="services-page__section-desc">
@@ -167,7 +187,12 @@ export default function ServicesPage() {
         decor={
           <>
             <FloatingSphere size={80} tone="dark" className="services-page__cta-sphere" />
-            <FloatingCube size={90} tone="dark" delay={1} className="services-page__cta-cube" />
+            <FloatingCube
+              size={90}
+              tone="dark"
+              delay={1}
+              className="services-page__cta-cube"
+            />
           </>
         }
       />

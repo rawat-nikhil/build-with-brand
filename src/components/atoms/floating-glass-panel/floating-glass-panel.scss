@@ -1,0 +1,5 @@
+@reference "#globals.css";
+
+.floating-glass-panel {
+  @apply rounded-2xl border border-white/15 backdrop-blur-md;
+}

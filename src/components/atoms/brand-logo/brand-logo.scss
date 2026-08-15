@@ -1,0 +1,8 @@
+@reference "#globals.css";
+
+.brand-logo {
+  @apply flex items-center;
+  &__image {
+    @apply w-auto;
+  }
+}
