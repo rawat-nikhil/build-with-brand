@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { BrandLogo } from "@/components/atoms/brand-logo";
 import { FooterLinkColumn } from "@/components/molecules/footer-link-column";
 import { SocialLinks } from "@/components/molecules/social-links";
@@ -45,9 +47,9 @@ export function Footer() {
           <p>© {new Date().getFullYear()} Build With Brand. All rights reserved.</p>
           <div className="footer__legal-links">
             {legalLinks.map((link) => (
-              <a key={link.label} href={link.href} className="footer__legal-link">
+              <Link key={link.label} href={link.href} className="footer__legal-link">
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
