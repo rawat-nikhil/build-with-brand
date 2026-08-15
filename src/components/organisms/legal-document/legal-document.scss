@@ -1,0 +1,43 @@
+@reference "#globals.css";
+
+.legal-document {
+  &__header {
+    @apply bg-brand-bg-dark px-6 pt-14 pb-16 text-white;
+  }
+
+  &__header-inner {
+    @apply mx-auto max-w-3xl;
+  }
+
+  &__title {
+    @apply mt-4 text-4xl leading-tighter font-semibold tracking-tight sm:text-5xl;
+  }
+
+  &__updated {
+    @apply mt-4 text-xs font-medium tracking-wide text-white/40 uppercase;
+  }
+
+  &__intro {
+    @apply mt-6 max-w-xl text-base text-white/60;
+  }
+
+  &__body {
+    @apply mx-auto max-w-3xl px-6 py-16;
+  }
+
+  &__section {
+    @apply mt-10 first:mt-0;
+  }
+
+  &__heading {
+    @apply text-xl font-semibold text-brand-ink;
+  }
+
+  &__paragraph {
+    @apply mt-3 text-sm leading-relaxed text-brand-ink-secondary;
+  }
+
+  &__list {
+    @apply mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-brand-ink-secondary;
+  }
+}

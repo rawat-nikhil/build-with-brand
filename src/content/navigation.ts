@@ -11,6 +11,6 @@ export const navLinks: NavLink[] = [
 ];
 
 export const legalLinks: NavLink[] = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms & Conditions", href: "#" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms & Conditions", href: "/terms" },
 ];
