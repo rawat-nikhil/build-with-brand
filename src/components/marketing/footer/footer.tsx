@@ -4,6 +4,7 @@ import Link from "next/link";
 import { services } from "@/lib/services";
 import { socials } from "@/lib/socials";
 import { contacts } from "@/lib/contacts";
+import "./footer.scss";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -16,13 +17,13 @@ const quickLinks = [
 
 function SocialIcon({ label, icon }: { label: string; icon: string }) {
   return (
-    <span className="flex size-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20">
+    <span className="footer__social-btn">
       <Image
         src={icon}
         alt={label}
         width={20}
         height={20}
-        className="size-4 object-contain brightness-0 invert"
+        className="footer__social-img"
       />
     </span>
   );
@@ -30,23 +31,23 @@ function SocialIcon({ label, icon }: { label: string; icon: string }) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-brand-bg-dark text-white/70">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="flex flex-col gap-4">
-          <Link href="/" className="flex items-center">
+    <footer className="footer">
+      <div className="footer__grid">
+        <div className="footer__brand">
+          <Link href="/" className="footer__logo-link">
             <Image
               src="/header.png"
               alt="Build with Brand"
               width={700}
               height={200}
-              className="h-10 w-auto"
+              className="footer__logo"
             />
           </Link>
-          <p className="text-sm text-white/60">
+          <p className="footer__tagline">
             We help businesses and creators build digital products that are
             meaningful, functional and designed to grow.
           </p>
-          <div className="flex gap-3 pt-1">
+          <div className="footer__socials">
             {socials.map((social) => (
               <a
                 key={social.label}
@@ -62,11 +63,11 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-white">Quick Links</h3>
-          <ul className="mt-4 flex flex-col gap-3 text-sm">
+          <h3 className="footer__col-heading">Quick Links</h3>
+          <ul className="footer__col-list">
             {quickLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="hover:text-white">
+                <Link href={link.href} className="footer__col-link">
                   {link.label}
                 </Link>
               </li>
@@ -75,8 +76,8 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-white">Services</h3>
-          <ul className="mt-4 flex flex-col gap-3 text-sm">
+          <h3 className="footer__col-heading">Services</h3>
+          <ul className="footer__col-list">
             {services.map((service) => (
               <li key={service.title}>{service.title}</li>
             ))}
@@ -84,11 +85,11 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-white">Contact</h3>
-          <ul className="mt-4 flex flex-col gap-3 text-sm">
+          <h3 className="footer__col-heading">Contact</h3>
+          <ul className="footer__col-list">
             {[contacts.email, contacts.phone, contacts.location].map((item) => (
-              <li key={item.label} className="flex items-center gap-2">
-                <item.icon className="size-4 text-brand-violet" />
+              <li key={item.label} className="footer__contact-item">
+                <item.icon className="footer__contact-icon" />
                 {item.value}
               </li>
             ))}
@@ -96,16 +97,16 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col-reverse items-center justify-between gap-4 px-6 py-6 text-xs text-white/50 sm:flex-row">
+      <div className="footer__bottom">
+        <div className="footer__bottom-inner">
           <p>
             © {new Date().getFullYear()} Build With Brand. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white">
+          <div className="footer__legal-links">
+            <a href="#" className="footer__legal-link">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="#" className="footer__legal-link">
               Terms &amp; Conditions
             </a>
           </div>

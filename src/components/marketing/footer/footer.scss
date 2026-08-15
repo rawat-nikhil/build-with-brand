@@ -1,0 +1,22 @@
+@reference "../../../app/globals.css";
+
+.footer {
+  @apply border-t border-white/10 bg-brand-bg-dark text-white/70;
+  &__grid { @apply mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4; }
+  &__brand { @apply flex flex-col gap-4; }
+  &__logo-link { @apply flex items-center; }
+  &__logo { @apply h-10 w-auto; }
+  &__tagline { @apply text-sm text-white/60; }
+  &__socials { @apply flex gap-3 pt-1; }
+  &__social-btn { @apply flex size-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20; }
+  &__social-img { @apply size-4 object-contain brightness-0 invert; }
+  &__col-heading { @apply text-sm font-semibold text-white; }
+  &__col-list { @apply mt-4 flex flex-col gap-3 text-sm; }
+  &__col-link { @apply hover:text-white; }
+  &__contact-item { @apply flex items-center gap-2; }
+  &__contact-icon { @apply size-4 text-brand-violet; }
+  &__bottom { @apply border-t border-white/10; }
+  &__bottom-inner { @apply mx-auto flex max-w-7xl flex-col-reverse items-center justify-between gap-4 px-6 py-6 text-xs text-white/50 sm:flex-row; }
+  &__legal-links { @apply flex gap-6; }
+  &__legal-link { @apply hover:text-white; }
+}

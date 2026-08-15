@@ -9,6 +9,7 @@ import { CTASection } from "@/components/marketing/cta-section";
 import { FloatingCube } from "@/components/decor/floating-cube";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
 import { services } from "@/lib/services";
+import "./page.scss";
 
 export const metadata: Metadata = {
   title: "Services — Build With Brand",
@@ -41,29 +42,11 @@ const otherCapabilities = [
 
 function ServicesHeroVisual() {
   return (
-    <div className="relative flex size-72 items-center justify-center">
+    <div className="services-page__hero-visual">
       <FloatingCube size={150} tone="violet" duration={8} className="relative z-10" />
-      <FloatingCube
-        size={70}
-        tone="dark"
-        duration={7}
-        delay={0.4}
-        className="absolute bottom-4 left-2"
-      />
-      <FloatingCube
-        size={60}
-        tone="dark"
-        duration={9}
-        delay={1}
-        className="absolute right-0 bottom-10"
-      />
-      <FloatingCube
-        size={50}
-        tone="dark"
-        duration={10}
-        delay={1.6}
-        className="absolute top-2 right-6"
-      />
+      <FloatingCube size={70} tone="dark" duration={7} delay={0.4} className="absolute bottom-4 left-2" />
+      <FloatingCube size={60} tone="dark" duration={9} delay={1} className="absolute right-0 bottom-10" />
+      <FloatingCube size={50} tone="dark" duration={10} delay={1.6} className="absolute top-2 right-6" />
     </div>
   );
 }
@@ -75,31 +58,31 @@ export default function ServicesPage() {
         eyebrow="Our Services"
         title={
           <>
-            Digital solutions that drive <span className="text-brand-violet">real growth.</span>
+            Digital solutions that drive <span className="services-page__accent">real growth.</span>
           </>
         }
         description="We design and build digital products that are modern, scalable and tailored to your business goals."
         visual={<ServicesHeroVisual />}
         extra={
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            <div className="flex items-start gap-3">
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-violet/10 text-brand-violet">
-                <Target className="size-5" />
+          <div className="services-page__hero-extra">
+            <div className="services-page__feature-item">
+              <span className="services-page__feature-icon-wrap">
+                <Target className="services-page__feature-icon" />
               </span>
               <div>
-                <p className="text-sm font-semibold text-white">Strategy First</p>
-                <p className="mt-1 text-sm text-white/50">
+                <p className="services-page__feature-title">Strategy First</p>
+                <p className="services-page__feature-desc">
                   We start with understanding your business and audience.
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3">
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-violet/10 text-brand-violet">
-                <TrendingUp className="size-5" />
+            <div className="services-page__feature-item">
+              <span className="services-page__feature-icon-wrap">
+                <TrendingUp className="services-page__feature-icon" />
               </span>
               <div>
-                <p className="text-sm font-semibold text-white">Results Driven</p>
-                <p className="mt-1 text-sm text-white/50">
+                <p className="services-page__feature-title">Results Driven</p>
+                <p className="services-page__feature-desc">
                   Our solutions are built to deliver measurable impact.
                 </p>
               </div>
@@ -108,22 +91,22 @@ export default function ServicesPage() {
         }
       />
 
-      <section className="bg-brand-bg-light px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+      <section className="services-page__main">
+        <div className="services-page__main-inner">
+          <div className="services-page__section-header">
             <div>
               <Eyebrow>What We Do</Eyebrow>
-              <h2 className="mt-3 max-w-xl text-3xl font-semibold text-brand-ink sm:text-4xl">
-                Services that power your <span className="text-brand-violet">digital growth.</span>
+              <h2 className="services-page__section-heading">
+                Services that power your <span className="services-page__accent">digital growth.</span>
               </h2>
             </div>
-            <p className="max-w-sm text-sm text-brand-ink-secondary">
+            <p className="services-page__section-desc">
               From stunning websites to powerful web applications, we provide end-to-end
               solutions to help your brand stand out and scale.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="services-page__services-grid">
             {services.map((service, i) => (
               <ServiceCard
                 key={service.title}
@@ -136,26 +119,26 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-brand-bg-dark px-6 py-20 text-white">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+      <section className="services-page__other">
+        <div className="services-page__other-inner">
+          <div className="services-page__other-header">
             <div>
               <Eyebrow>Other Capabilities</Eyebrow>
-              <h2 className="mt-3 text-2xl font-semibold sm:text-3xl">More ways we can help</h2>
+              <h2 className="services-page__other-heading">More ways we can help</h2>
             </div>
             <CtaButton href="/contact" variant="outline-dark" size="sm">
               Discuss Your Project
             </CtaButton>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="services-page__other-grid">
             {otherCapabilities.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/3 p-6">
-                <span className="flex size-11 items-center justify-center rounded-lg bg-brand-violet/10 text-brand-violet">
-                  <item.icon className="size-5" />
+              <div key={item.title} className="services-page__other-card">
+                <span className="services-page__other-icon-wrap">
+                  <item.icon className="services-page__other-icon" />
                 </span>
-                <h3 className="mt-4 text-base font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-white/50">{item.description}</p>
+                <h3 className="services-page__other-title">{item.title}</h3>
+                <p className="services-page__other-desc">{item.description}</p>
               </div>
             ))}
           </div>
@@ -183,8 +166,8 @@ export default function ServicesPage() {
         }
         decor={
           <>
-            <FloatingSphere size={80} tone="dark" className="absolute bottom-6 left-8 hidden md:block" />
-            <FloatingCube size={90} tone="dark" delay={1} className="absolute right-10 bottom-4 hidden md:block" />
+            <FloatingSphere size={80} tone="dark" className="services-page__cta-sphere" />
+            <FloatingCube size={90} tone="dark" delay={1} className="services-page__cta-cube" />
           </>
         }
       />

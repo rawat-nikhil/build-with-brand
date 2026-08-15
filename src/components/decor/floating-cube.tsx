@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import "./floating-cube.scss";
 
 interface FloatingCubeProps {
   size?: number;
@@ -37,13 +38,13 @@ export function FloatingCube({
 
   return (
     <motion.div
-      className={cn("relative", className)}
+      className={cn("floating-cube", className)}
       style={{ width: size, height: size }}
       animate={reduceMotion ? undefined : { y: [0, -14, 0] }}
       transition={{ duration, repeat: Infinity, ease: "easeInOut", delay }}
     >
       <motion.div
-        className="relative h-full w-full"
+        className="floating-cube__inner"
         style={{ transformStyle: "preserve-3d", transformPerspective: size * 5 }}
         animate={
           reduceMotion
@@ -53,11 +54,11 @@ export function FloatingCube({
         transition={{ duration: duration * 1.4, repeat: Infinity, ease: "easeInOut", delay }}
       >
         <div
-          className="absolute inset-0 rounded-lg"
+          className="floating-cube__face"
           style={{ transform: `rotateX(90deg) translateZ(${half}px)`, background: faces.top }}
         />
         <div
-          className="absolute inset-0 rounded-lg"
+          className="floating-cube__face"
           style={{
             transform: `translateZ(${half}px)`,
             background: faces.front,
@@ -65,12 +66,12 @@ export function FloatingCube({
           }}
         />
         <div
-          className="absolute inset-0 rounded-lg"
+          className="floating-cube__face"
           style={{ transform: `rotateY(90deg) translateZ(${half}px)`, background: faces.side }}
         />
       </motion.div>
       <div
-        className="pointer-events-none absolute inset-0 -z-10 rounded-full blur-3xl"
+        className="floating-cube__glow"
         style={{ background: "radial-gradient(circle, rgba(139,92,246,0.35), transparent 70%)" }}
       />
     </motion.div>

@@ -8,6 +8,7 @@ import { FloatingCube } from "@/components/decor/floating-cube";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
 import { stats } from "@/lib/stats";
 import { processSteps } from "./constants";
+import "./page.scss";
 
 export { metadata } from "./constants";
 
@@ -22,11 +23,15 @@ export default function Home() {
         tone="gradient"
         title="Ready to build something amazing together?"
         description="Let's turn your ideas into powerful digital experiences that grow your brand."
-        actions={<CtaButton href="/contact" variant="dark-solid">Start Your Project</CtaButton>}
+        actions={
+          <CtaButton href="/contact" variant="dark-solid">
+            Start Your Project
+          </CtaButton>
+        }
         decor={
           <>
-            <FloatingCube size={90} tone="dark" className="absolute bottom-4 left-6 hidden md:block" />
-            <FloatingSphere size={70} tone="dark" delay={1} className="absolute right-8 bottom-6 hidden md:block" />
+            <FloatingCube size={90} tone="dark" className="home-page__cta-cube" />
+            <FloatingSphere size={70} tone="dark" delay={1} className="home-page__cta-sphere" />
           </>
         }
       />

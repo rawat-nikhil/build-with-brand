@@ -8,6 +8,7 @@ import { CTASection } from "@/components/marketing/cta-section";
 import { ProcessExplorer, type ProcessStepData } from "@/components/marketing/process-explorer";
 import { CubeCluster } from "@/components/decor/cube-cluster";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
+import "./page.scss";
 
 export const metadata: Metadata = {
   title: "Process — Build With Brand",
@@ -118,7 +119,7 @@ export default function ProcessPage() {
         eyebrow="Our Process"
         title={
           <>
-            A proven process. Built for <span className="text-brand-violet">results.</span>
+            A proven process. Built for <span className="process-page__accent">results.</span>
           </>
         }
         description="We follow a simple, transparent and collaborative process to turn your ideas into impactful digital products."
@@ -126,46 +127,46 @@ export default function ProcessPage() {
         visual={<CubeCluster size={280} />}
       />
 
-      <section className="bg-brand-bg-light px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow className="text-center">How We Work</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold text-brand-ink sm:text-4xl">
-              From idea to impact, <span className="text-brand-violet">step by step.</span>
+      <section className="process-page__explorer">
+        <div className="process-page__explorer-inner">
+          <div className="process-page__explorer-header">
+            <Eyebrow className="process-page__explorer-eyebrow">How We Work</Eyebrow>
+            <h2 className="process-page__explorer-heading">
+              From idea to impact, <span className="process-page__accent">step by step.</span>
             </h2>
-            <p className="mt-4 text-sm text-brand-ink-secondary">
+            <p className="process-page__explorer-desc">
               Our structured approach ensures clarity, quality and consistency at every stage of
               your project.
             </p>
           </div>
 
-          <div className="mt-14">
+          <div className="process-page__explorer-content">
             <ProcessExplorer steps={steps} />
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow className="text-center">Why Our Process Works</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold text-brand-ink sm:text-4xl">
-              Designed for clarity. Built for <span className="text-brand-violet">success.</span>
+      <section className="process-page__why">
+        <div className="process-page__why-inner">
+          <div className="process-page__why-header">
+            <Eyebrow className="process-page__why-eyebrow">Why Our Process Works</Eyebrow>
+            <h2 className="process-page__why-heading">
+              Designed for clarity. Built for <span className="process-page__accent">success.</span>
             </h2>
-            <p className="mt-4 text-sm text-brand-ink-secondary">
+            <p className="process-page__why-desc">
               Our process is collaborative, agile and transparent — keeping you informed and
               involved from start to finish.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="process-page__why-grid">
             {whyItWorks.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-black/5 p-6 text-center">
-                <span className="mx-auto flex size-12 items-center justify-center rounded-xl bg-brand-violet/10 text-brand-violet">
-                  <item.icon className="size-5" />
+              <div key={item.title} className="process-page__why-card">
+                <span className="process-page__why-icon-wrap">
+                  <item.icon className="process-page__why-icon" />
                 </span>
-                <h3 className="mt-4 text-base font-semibold text-brand-ink">{item.title}</h3>
-                <p className="mt-2 text-sm text-brand-ink-secondary">{item.description}</p>
+                <h3 className="process-page__why-title">{item.title}</h3>
+                <p className="process-page__why-desc-text">{item.description}</p>
               </div>
             ))}
           </div>
@@ -186,8 +187,8 @@ export default function ProcessPage() {
         }
         decor={
           <>
-            <FloatingSphere size={70} tone="dark" className="absolute bottom-8 left-10 hidden md:block" />
-            <FloatingSphere size={50} tone="violet" delay={1} className="absolute top-10 right-16 hidden md:block" />
+            <FloatingSphere size={70} tone="dark" className="process-page__cta-sphere-1" />
+            <FloatingSphere size={50} tone="violet" delay={1} className="process-page__cta-sphere-2" />
           </>
         }
       />

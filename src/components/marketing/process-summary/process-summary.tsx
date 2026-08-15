@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import "./process-summary.scss";
 
 export interface ProcessSummaryStep {
   number: string;
@@ -17,17 +18,17 @@ export function ProcessSummary({
   className?: string;
 }) {
   return (
-    <div className={cn("grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4", className)}>
+    <div className={cn("process-summary", className)}>
       {steps.map((step, i) => (
-        <div key={step.number} className="relative flex flex-col items-center text-center">
+        <div key={step.number} className="process-summary__item">
           {i < steps.length - 1 && (
-            <span className="absolute top-6 left-1/2 hidden h-px w-full -translate-y-1/2 bg-black/10 sm:block" />
+            <span className="process-summary__connector" />
           )}
-          <span className="relative z-10 flex size-12 items-center justify-center rounded-full border-2 border-brand-violet/30 bg-white text-brand-violet">
-            <step.icon className="size-5" />
+          <span className="process-summary__icon-wrap">
+            <step.icon className="process-summary__icon" />
           </span>
-          <p className="mt-4 text-sm font-semibold text-brand-ink">{step.title}</p>
-          <p className="mt-1 text-xs text-brand-ink-secondary">{step.description}</p>
+          <p className="process-summary__title">{step.title}</p>
+          <p className="process-summary__description">{step.description}</p>
         </div>
       ))}
     </div>

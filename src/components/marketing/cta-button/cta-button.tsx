@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import "./cta-button.scss";
 
 type CtaButtonVariant = "primary" | "dark-solid" | "outline-dark" | "outline-light";
 type CtaButtonSize = "md" | "sm";
@@ -25,17 +26,16 @@ type CtaButtonProps =
       type?: "button" | "submit";
     });
 
-const sizeClasses: Record<CtaButtonSize, string> = {
-  md: "px-6 py-3 text-sm",
-  sm: "px-5 py-2.5 text-[0.8125rem]",
+const sizeModifier: Record<CtaButtonSize, string> = {
+  md: "cta-button--md",
+  sm: "cta-button--sm",
 };
 
-const variantClasses: Record<CtaButtonVariant, string> = {
-  primary:
-    "bg-gradient-to-r from-brand-violet-2 to-brand-indigo text-white shadow-[0_8px_24px_-8px_rgba(124,92,252,0.6)] hover:opacity-90",
-  "dark-solid": "bg-white text-brand-ink hover:bg-white/90",
-  "outline-dark": "border border-white/25 text-white hover:bg-white/10",
-  "outline-light": "border border-brand-ink/15 text-brand-ink hover:bg-brand-ink/5",
+const variantModifier: Record<CtaButtonVariant, string> = {
+  primary: "cta-button--primary",
+  "dark-solid": "cta-button--dark-solid",
+  "outline-dark": "cta-button--outline-dark",
+  "outline-light": "cta-button--outline-light",
 };
 
 export function CtaButton({
@@ -49,16 +49,16 @@ export function CtaButton({
   ...rest
 }: CtaButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full font-medium whitespace-nowrap transition-colors",
-    sizeClasses[size],
-    variantClasses[variant],
+    "cta-button",
+    sizeModifier[size],
+    variantModifier[variant],
     className
   );
 
   const content = (
     <>
       {children}
-      {icon && <ArrowRight className="size-4" />}
+      {icon && <ArrowRight className="cta-button__icon" />}
     </>
   );
 

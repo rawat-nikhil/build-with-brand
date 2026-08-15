@@ -12,6 +12,7 @@ import { FloatingCube } from "@/components/decor/floating-cube";
 import { FloatingSphere } from "@/components/decor/floating-sphere";
 import { FloatingGlassPanel } from "@/components/decor/floating-glass-panel";
 import { stats } from "@/lib/stats";
+import "./page.scss";
 
 export const metadata: Metadata = {
   title: "About — Build With Brand",
@@ -57,23 +58,20 @@ export default function AboutPage() {
         title={
           <>
             We build digital experiences that build{" "}
-            <span className="text-brand-violet">your brand.</span>
+            <span className="about-page__accent">your brand.</span>
           </>
         }
         description="Build With Brand is a digital studio helping businesses and creators turn ideas into powerful digital products that are meaningful, functional and designed to grow."
         actions={
-          <Link
-            href="/about#team"
-            className="inline-flex items-center gap-3 rounded-full border border-white/20 py-2 pr-5 pl-2 text-sm font-medium text-white transition-colors hover:bg-white/10"
-          >
-            <span className="flex size-8 items-center justify-center rounded-full bg-white text-brand-ink">
-              <Play className="size-3.5 fill-current" />
+          <Link href="/about#team" className="about-page__hero-action">
+            <span className="about-page__hero-action-icon">
+              <Play className="about-page__hero-play-icon" />
             </span>
             Meet The Team
           </Link>
         }
         visual={
-          <div className="relative flex size-72 items-center justify-center">
+          <div className="about-page__hero-visual">
             <FloatingGlassPanel width={130} height={170} delay={0.4} className="absolute top-6 left-0" />
             <FloatingCube size={170} tone="dark" className="absolute right-0 bottom-0" />
             <FloatingSphere size={60} tone="violet" delay={1} className="absolute top-0 right-10" />
@@ -83,31 +81,28 @@ export default function AboutPage() {
 
       <StatsBar stats={stats} />
 
-      <section className="bg-brand-bg-light px-6 py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+      <section className="about-page__story">
+        <div className="about-page__story-inner">
           <div>
             <Eyebrow>Our Story</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold text-brand-ink sm:text-4xl">
-              How it all <span className="text-brand-violet">started.</span>
+            <h2 className="about-page__story-heading">
+              How it all <span className="about-page__accent">started.</span>
             </h2>
-            <p className="mt-6 text-sm text-brand-ink-secondary">
+            <p className="about-page__story-body">
               Build With Brand started with a simple belief — great design and technology can
               transform businesses.
             </p>
-            <p className="mt-4 text-sm text-brand-ink-secondary">
+            <p className="about-page__story-body-2">
               What began as a small team of passionate developers and designers has grown into a
               digital studio trusted by brands across the globe.
             </p>
-            <Link
-              href="/work"
-              className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand-violet hover:underline"
-            >
+            <Link href="/work" className="about-page__story-link">
               Our Journey
-              <ArrowRight className="size-4" />
+              <ArrowRight className="about-page__story-link-icon" />
             </Link>
           </div>
-          <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-bg-dark via-[#171223] to-black">
-            <p className="px-6 text-center text-2xl leading-tight font-semibold text-white/80 sm:text-3xl">
+          <div className="about-page__story-visual">
+            <p className="about-page__story-visual-text">
               BUILD
               <br />
               WITH
@@ -118,57 +113,57 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+      <section className="about-page__values">
+        <div className="about-page__values-inner">
+          <div className="about-page__section-header">
             <div>
               <Eyebrow>Our Values</Eyebrow>
-              <h2 className="mt-3 max-w-xl text-3xl font-semibold text-brand-ink sm:text-4xl">
-                The principles that guide <span className="text-brand-violet">everything</span> we
+              <h2 className="about-page__section-heading">
+                The principles that guide <span className="about-page__accent">everything</span> we
                 do.
               </h2>
             </div>
-            <p className="max-w-sm text-sm text-brand-ink-secondary">
+            <p className="about-page__section-desc">
               These values shape our decisions, our work and the relationships we build.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="about-page__values-grid">
             {values.map((value) => (
-              <div key={value.title} className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
-                <span className="flex size-12 items-center justify-center rounded-xl bg-brand-violet/10 text-brand-violet">
-                  <value.icon className="size-5" />
+              <div key={value.title} className="about-page__value-card">
+                <span className="about-page__value-icon-wrap">
+                  <value.icon className="about-page__value-icon" />
                 </span>
-                <h3 className="mt-5 text-lg font-semibold text-brand-ink">{value.title}</h3>
-                <p className="mt-2 text-sm text-brand-ink-secondary">{value.description}</p>
+                <h3 className="about-page__value-title">{value.title}</h3>
+                <p className="about-page__value-desc">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="team" className="bg-brand-bg-dark px-6 py-20 text-white">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+      <section id="team" className="about-page__team">
+        <div className="about-page__team-inner">
+          <div className="about-page__team-header">
             <div>
               <Eyebrow>Our Team</Eyebrow>
-              <h2 className="mt-3 max-w-xl text-3xl font-semibold sm:text-4xl">
-                A team of builders, thinkers and <span className="text-brand-violet">creators.</span>
+              <h2 className="about-page__team-heading">
+                A team of builders, thinkers and <span className="about-page__accent">creators.</span>
               </h2>
             </div>
-            <p className="max-w-sm text-sm text-white/50">
+            <p className="about-page__team-desc">
               We&apos;re a tight-knit team of designers, developers and strategists who love what
               we do and take pride in what we build.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="about-page__team-grid">
             {team.map((member) => (
               <TeamCard key={member.name} {...member} />
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="about-page__team-cta">
             <CtaButton href="/contact" variant="outline-dark" size="sm">
               Join Our Team
             </CtaButton>
@@ -180,15 +175,15 @@ export default function AboutPage() {
         tone="light"
         title={
           <>
-            Let&apos;s build something amazing <span className="text-brand-violet">together.</span>
+            Let&apos;s build something amazing <span className="about-page__accent">together.</span>
           </>
         }
         description="Have a project in mind? Let's turn your ideas into powerful digital experiences."
         actions={<CtaButton href="/contact">Start Your Project</CtaButton>}
         decor={
           <>
-            <FloatingCube size={70} tone="violet" className="absolute bottom-8 left-10 hidden md:block" />
-            <FloatingSphere size={60} tone="violet" delay={1} className="absolute top-10 right-14 hidden md:block" />
+            <FloatingCube size={70} tone="violet" className="about-page__cta-cube-1" />
+            <FloatingSphere size={60} tone="violet" delay={1} className="about-page__cta-sphere-1" />
           </>
         }
       />

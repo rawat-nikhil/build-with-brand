@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import "./eyebrow.scss";
 
 export function Eyebrow({
   children,
@@ -8,12 +9,7 @@ export function Eyebrow({
   className?: string;
 }) {
   return (
-    <p
-      className={cn(
-        "text-xs font-semibold tracking-[0.2em] text-brand-violet uppercase",
-        className
-      )}
-    >
+    <p className={cn("eyebrow", className)}>
       {children}
     </p>
   );

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Clock, CircleCheck } from "lucide-react";
 
 import { ProcessStep } from "@/components/marketing/process-step";
+import "./process-explorer.scss";
 
 export interface ProcessStepData {
   index: string;
@@ -21,8 +22,8 @@ export function ProcessExplorer({ steps }: { steps: ProcessStepData[] }) {
   const active = steps[activeIndex];
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
-      <div className="flex flex-col gap-2">
+    <div className="process-explorer">
+      <div className="process-explorer__steps">
         {steps.map((step, i) => (
           <ProcessStep
             key={step.title}
@@ -36,34 +37,28 @@ export function ProcessExplorer({ steps }: { steps: ProcessStepData[] }) {
         ))}
       </div>
 
-      <div className="rounded-2xl border border-black/5 bg-white p-8 shadow-sm">
-        <p className="text-xs font-semibold tracking-[0.2em] text-brand-violet uppercase">
-          Step {active.index}
-        </p>
-        <h3 className="mt-2 text-2xl font-semibold text-brand-ink">{active.title}</h3>
-        <p className="mt-4 text-sm text-brand-ink-secondary">{active.description}</p>
+      <div className="process-explorer__panel">
+        <p className="process-explorer__step-label">Step {active.index}</p>
+        <h3 className="process-explorer__step-title">{active.title}</h3>
+        <p className="process-explorer__step-desc">{active.description}</p>
 
-        <p className="mt-6 text-xs font-semibold tracking-[0.15em] text-brand-violet uppercase">
-          What we do
-        </p>
-        <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+        <p className="process-explorer__bullets-label">What we do</p>
+        <ul className="process-explorer__bullets">
           {active.bullets.map((bullet) => (
-            <li key={bullet} className="flex items-center gap-2 text-sm text-brand-ink-secondary">
-              <CircleCheck className="size-4 shrink-0 text-brand-violet" />
+            <li key={bullet} className="process-explorer__bullet">
+              <CircleCheck className="process-explorer__bullet-icon" />
               {bullet}
             </li>
           ))}
         </ul>
 
-        <div className="mt-6 flex aspect-[16/9] w-full items-center justify-center rounded-xl bg-gradient-to-br from-brand-violet/10 via-brand-bg-light to-brand-violet/5">
-          {active.iconLarge}
-        </div>
+        <div className="process-explorer__visual">{active.iconLarge}</div>
 
-        <div className="mt-6 inline-flex items-center gap-3 rounded-lg bg-brand-bg-light px-4 py-3">
-          <Clock className="size-5 text-brand-violet" />
+        <div className="process-explorer__timeline">
+          <Clock className="process-explorer__timeline-icon" />
           <div>
-            <p className="text-xs text-brand-ink-secondary">Timeline</p>
-            <p className="text-sm font-semibold text-brand-ink">{active.timeline}</p>
+            <p className="process-explorer__timeline-label">Timeline</p>
+            <p className="process-explorer__timeline-value">{active.timeline}</p>
           </div>
         </div>
       </div>

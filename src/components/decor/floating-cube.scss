@@ -1,0 +1,8 @@
+@reference "../../app/globals.css";
+
+.floating-cube {
+  @apply relative;
+  &__inner { @apply relative h-full w-full; }
+  &__face { @apply absolute inset-0 rounded-lg; }
+  &__glow { @apply pointer-events-none absolute inset-0 -z-10 rounded-full blur-3xl; }
+}

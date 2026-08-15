@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowRight, CircleCheck } from "lucide-react";
+import "./contact-form.scss";
 
 const PROJECT_TYPES = [
   "Website Development",
@@ -10,9 +11,6 @@ const PROJECT_TYPES = [
   "UI/UX Design",
   "Something else",
 ];
-
-const fieldClasses =
-  "w-full rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm text-brand-ink placeholder:text-black/35 outline-none focus:border-brand-violet focus:ring-2 focus:ring-brand-violet/20";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -24,10 +22,10 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-brand-violet/20 bg-brand-violet/5 px-8 py-16 text-center">
-        <CircleCheck className="size-10 text-brand-violet" />
-        <h3 className="text-lg font-semibold text-brand-ink">Message sent!</h3>
-        <p className="max-w-sm text-sm text-brand-ink-secondary">
+      <div className="contact-form__success">
+        <CircleCheck className="contact-form__success-icon" />
+        <h3 className="contact-form__success-title">Message sent!</h3>
+        <p className="contact-form__success-desc">
           Thanks for reaching out. We&apos;ll get back to you within 24 hours.
         </p>
       </div>
@@ -35,16 +33,16 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit} className="contact-form">
       <div>
-        <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-brand-ink">
+        <label htmlFor="name" className="contact-form__label">
           Your Name *
         </label>
-        <input id="name" name="name" type="text" required placeholder="Enter your name" className={fieldClasses} />
+        <input id="name" name="name" type="text" required placeholder="Enter your name" className="contact-form__input" />
       </div>
 
       <div>
-        <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-brand-ink">
+        <label htmlFor="email" className="contact-form__label">
           Your Email *
         </label>
         <input
@@ -53,12 +51,12 @@ export function ContactForm() {
           type="email"
           required
           placeholder="Enter your email"
-          className={fieldClasses}
+          className="contact-form__input"
         />
       </div>
 
       <div>
-        <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-brand-ink">
+        <label htmlFor="company" className="contact-form__label">
           Company Name
         </label>
         <input
@@ -66,15 +64,15 @@ export function ContactForm() {
           name="company"
           type="text"
           placeholder="Enter your company name"
-          className={fieldClasses}
+          className="contact-form__input"
         />
       </div>
 
       <div>
-        <label htmlFor="projectType" className="mb-1.5 block text-sm font-medium text-brand-ink">
+        <label htmlFor="projectType" className="contact-form__label">
           Project Type
         </label>
-        <select id="projectType" name="projectType" defaultValue="" className={fieldClasses}>
+        <select id="projectType" name="projectType" defaultValue="" className="contact-form__input">
           <option value="" disabled>
             Select a service
           </option>
@@ -87,7 +85,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-brand-ink">
+        <label htmlFor="message" className="contact-form__label">
           Your Message *
         </label>
         <textarea
@@ -96,16 +94,13 @@ export function ContactForm() {
           required
           rows={4}
           placeholder="Tell us about your project..."
-          className={fieldClasses}
+          className="contact-form__input"
         />
       </div>
 
-      <button
-        type="submit"
-        className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-violet-2 to-brand-indigo px-6 py-3 text-sm font-medium text-white shadow-[0_8px_24px_-8px_rgba(124,92,252,0.6)] transition-opacity hover:opacity-90"
-      >
+      <button type="submit" className="contact-form__submit">
         Send Message
-        <ArrowRight className="size-4" />
+        <ArrowRight className="contact-form__submit-icon" />
       </button>
     </form>
   );

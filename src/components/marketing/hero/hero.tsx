@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { Eyebrow } from "@/components/marketing/eyebrow";
+import "./hero.scss";
 
 interface HeroProps {
   eyebrow?: string;
@@ -29,12 +30,7 @@ export function Hero({
   className,
 }: HeroProps) {
   return (
-    <section
-      className={cn(
-        "relative overflow-hidden bg-brand-bg-dark px-6 pt-14 pb-20 text-white",
-        className
-      )}
-    >
+    <section className={cn("hero", className)}>
       {backgroundImage && (
         <>
           <Image
@@ -43,32 +39,21 @@ export function Hero({
             fill
             priority
             sizes="100vw"
-            className="object-contain object-right"
+            className="hero__bg-image"
           />
-          <div
-            className="absolute inset-0 bg-linear-to-r from-brand-bg-dark via-brand-bg-dark/70 to-transparent"
-            aria-hidden
-          />
+          <div className="hero__bg-overlay" aria-hidden />
         </>
       )}
-      <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="hero__content">
+        <div className="hero__grid">
           <div>
             {eyebrowNode ?? (eyebrow && <Eyebrow>{eyebrow}</Eyebrow>)}
-            <h1 className="mt-4 text-4xl leading-[1.1] font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-              {title}
-            </h1>
-            <p className="mt-6 max-w-xl text-base text-white/60">{description}</p>
-            {actions && (
-              <div className="mt-8 flex flex-wrap items-center gap-4">{actions}</div>
-            )}
+            <h1 className="hero__heading">{title}</h1>
+            <p className="hero__description">{description}</p>
+            {actions && <div className="hero__actions">{actions}</div>}
             {!extraFullWidth && extra}
           </div>
-          {visual && (
-            <div className="relative flex min-h-70 items-center justify-center lg:justify-end">
-              {visual}
-            </div>
-          )}
+          {visual && <div className="hero__visual">{visual}</div>}
         </div>
         {extraFullWidth && extra}
       </div>

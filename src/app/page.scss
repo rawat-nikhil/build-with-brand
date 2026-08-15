@@ -1,0 +1,6 @@
+@reference "./globals.css";
+
+.home-page {
+  &__cta-cube { @apply absolute bottom-4 left-6 hidden md:block; }
+  &__cta-sphere { @apply absolute right-8 bottom-6 hidden md:block; }
+}
