@@ -1,0 +1,9 @@
+@reference "#globals.css";
+
+.work-projects-section {
+  @apply bg-brand-bg-dark px-6 pb-20 text-white;
+
+  &__inner {
+    @apply mx-auto max-w-7xl;
+  }
+}

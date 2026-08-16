@@ -1,0 +1,24 @@
+@reference "#globals.css";
+
+.work-clients-section {
+  @apply bg-brand-bg-dark px-6 py-14 text-white;
+
+  &__inner {
+    @apply mx-auto max-w-7xl;
+  }
+  &__label {
+    @apply text-center text-xs font-semibold tracking-eyebrow text-white/40 uppercase;
+  }
+  &__list {
+    @apply mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-4;
+  }
+  &__item {
+    @apply flex items-center gap-2 text-white/40;
+  }
+  &__icon {
+    @apply size-4;
+  }
+  &__name {
+    @apply text-sm font-medium;
+  }
+}

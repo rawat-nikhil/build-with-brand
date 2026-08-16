@@ -1,0 +1,27 @@
+@reference "#globals.css";
+
+.about-team-section {
+  @apply bg-brand-bg-dark px-6 py-20 text-white;
+
+  &__inner {
+    @apply mx-auto max-w-7xl;
+  }
+  &__header {
+    @apply flex flex-col justify-between gap-6 lg:flex-row lg:items-end;
+  }
+  &__heading {
+    @apply mt-3 max-w-xl text-3xl font-semibold sm:text-4xl;
+  }
+  &__accent {
+    @apply text-brand-violet;
+  }
+  &__desc {
+    @apply max-w-sm text-sm text-white/50;
+  }
+  &__grid {
+    @apply mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4;
+  }
+  &__cta {
+    @apply mt-10 text-center;
+  }
+}

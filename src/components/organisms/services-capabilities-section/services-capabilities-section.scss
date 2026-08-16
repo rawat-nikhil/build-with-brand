@@ -1,0 +1,18 @@
+@reference "#globals.css";
+
+.services-capabilities-section {
+  @apply bg-brand-bg-dark px-6 py-20 text-white;
+
+  &__inner {
+    @apply mx-auto max-w-7xl;
+  }
+  &__header {
+    @apply flex flex-col justify-between gap-6 sm:flex-row sm:items-end;
+  }
+  &__heading {
+    @apply mt-3 text-2xl font-semibold sm:text-3xl;
+  }
+  &__grid {
+    @apply mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4;
+  }
+}

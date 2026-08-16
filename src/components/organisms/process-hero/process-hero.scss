@@ -1,0 +1,7 @@
+@reference "#globals.css";
+
+.process-hero {
+  &__accent {
+    @apply text-brand-violet;
+  }
+}

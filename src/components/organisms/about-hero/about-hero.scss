@@ -1,0 +1,19 @@
+@reference "#globals.css";
+
+.about-hero {
+  &__accent {
+    @apply text-brand-violet;
+  }
+  &__visual {
+    @apply relative flex size-72 items-center justify-center;
+  }
+  &__action {
+    @apply inline-flex items-center gap-3 rounded-full border border-white/20 py-2 pr-5 pl-2 text-sm font-medium text-white transition-colors hover:bg-white/10;
+  }
+  &__action-icon {
+    @apply flex size-8 items-center justify-center rounded-full bg-white text-brand-ink;
+  }
+  &__play-icon {
+    @apply size-3.5 fill-current;
+  }
+}
