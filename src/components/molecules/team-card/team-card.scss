@@ -3,7 +3,10 @@
 .team-card {
   @apply relative overflow-hidden rounded-2xl bg-white/5;
   &__visual {
-    @apply flex aspect-[4/5] w-full items-center justify-center bg-gradient-to-br from-white/15 via-white/5 to-transparent text-4xl font-semibold text-white/25 transition-all duration-300 group-hover:grayscale-0;
+    @apply relative flex aspect-[4/5] w-full items-center justify-center bg-gradient-to-br from-white/15 via-white/5 to-transparent text-4xl font-semibold text-white/25;
+  }
+  &__photo {
+    @apply object-cover grayscale transition-all duration-300 group-hover:grayscale-0;
   }
   &__overlay {
     @apply absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/85 to-transparent p-4 pt-10;
