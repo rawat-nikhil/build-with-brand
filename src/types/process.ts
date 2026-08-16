@@ -9,6 +9,17 @@ export type ProcessSummaryStep = {
   description: string;
 };
 
+/** Content-layer step; icons are Lucide components, not JSX. */
+export type ProcessStepContent = {
+  index: string;
+  icon: LucideIcon;
+  title: string;
+  summary: string;
+  description: string;
+  bullets: string[];
+  timeline: string;
+};
+
 /** Full step used by the interactive explorer on the process page. */
 export type ProcessStepData = {
   index: string;

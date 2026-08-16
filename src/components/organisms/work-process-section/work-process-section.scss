@@ -1,0 +1,30 @@
+@reference "#globals.css";
+
+.work-process-section {
+  @apply bg-brand-bg-light px-6 py-20;
+
+  &__inner {
+    @apply mx-auto max-w-7xl;
+  }
+  &__layout {
+    @apply flex flex-col justify-between gap-8 lg:flex-row lg:items-center;
+  }
+  &__text {
+    @apply max-w-sm;
+  }
+  &__heading {
+    @apply mt-3 text-3xl font-semibold text-brand-ink;
+  }
+  &__accent {
+    @apply text-brand-violet;
+  }
+  &__desc {
+    @apply mt-4 text-sm text-brand-ink-secondary;
+  }
+  &__cta {
+    @apply mt-6;
+  }
+  &__summary {
+    @apply flex-1;
+  }
+}

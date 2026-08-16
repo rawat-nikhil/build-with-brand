@@ -1,0 +1,10 @@
+@reference "#globals.css";
+
+.work-hero {
+  &__accent {
+    @apply text-brand-violet;
+  }
+  &__visual {
+    @apply relative flex size-72 items-center justify-center;
+  }
+}

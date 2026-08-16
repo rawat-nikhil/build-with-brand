@@ -1,0 +1,57 @@
+@reference "#globals.css";
+
+.feature-card {
+  @apply rounded-2xl p-6;
+
+  &__icon-wrap {
+    @apply flex items-center justify-center bg-brand-violet/10 text-brand-violet;
+  }
+  &__icon {
+    @apply size-5;
+  }
+  &__description {
+    @apply mt-2 text-sm;
+  }
+
+  &--light {
+    @apply border border-black/5 bg-white shadow-sm;
+
+    .feature-card__icon-wrap {
+      @apply size-12 rounded-xl;
+    }
+    .feature-card__title {
+      @apply mt-5 text-lg font-semibold text-brand-ink;
+    }
+    .feature-card__description {
+      @apply text-brand-ink-secondary;
+    }
+  }
+
+  &--dark {
+    @apply border border-white/10 bg-white/3;
+
+    .feature-card__icon-wrap {
+      @apply size-11 rounded-lg;
+    }
+    .feature-card__title {
+      @apply mt-4 text-base font-semibold;
+    }
+    .feature-card__description {
+      @apply text-white/50;
+    }
+  }
+
+  &--centered {
+    @apply border border-black/5 text-center;
+
+    .feature-card__icon-wrap {
+      @apply mx-auto size-12 rounded-xl;
+    }
+    .feature-card__title {
+      @apply mt-4 text-base font-semibold text-brand-ink;
+    }
+    .feature-card__description {
+      @apply text-brand-ink-secondary;
+    }
+  }
+}

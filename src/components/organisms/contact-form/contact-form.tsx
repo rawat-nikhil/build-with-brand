@@ -6,7 +6,6 @@ import { toast } from "sonner";
 
 import { submitContact } from "@/actions/submit-contact";
 import { FormField } from "@/components/atoms/form-field";
-import { projectTypes } from "@/content/project-types";
 import type { ContactFormState } from "@/types";
 import "./contact-form.scss";
 
@@ -53,18 +52,18 @@ export function ContactForm() {
         required
       />
       <FormField
+        id="phone"
+        name="phone"
+        type="number"
+        label="Your Phone no."
+        placeholder="Enter your phone number"
+        required
+      />
+      <FormField
         id="company"
         name="company"
         label="Company Name"
         placeholder="Enter your company name"
-      />
-      <FormField
-        as="select"
-        id="projectType"
-        name="projectType"
-        label="Project Type"
-        placeholder="Select a service"
-        options={projectTypes}
       />
       <FormField
         as="textarea"

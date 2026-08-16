@@ -1,0 +1,27 @@
+@reference "#globals.css";
+
+.process-explorer-section {
+  @apply bg-brand-bg-light px-6 py-20;
+
+  &__inner {
+    @apply mx-auto max-w-7xl;
+  }
+  &__header {
+    @apply mx-auto max-w-2xl text-center;
+  }
+  &__eyebrow {
+    @apply text-center;
+  }
+  &__heading {
+    @apply mt-3 text-3xl font-semibold text-brand-ink sm:text-4xl;
+  }
+  &__accent {
+    @apply text-brand-violet;
+  }
+  &__desc {
+    @apply mt-4 text-sm text-brand-ink-secondary;
+  }
+  &__content {
+    @apply mt-14;
+  }
+}

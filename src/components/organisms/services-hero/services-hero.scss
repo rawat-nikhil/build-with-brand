@@ -1,0 +1,28 @@
+@reference "#globals.css";
+
+.services-hero {
+  &__accent {
+    @apply text-brand-violet;
+  }
+  &__visual {
+    @apply relative flex size-72 items-center justify-center;
+  }
+  &__extra {
+    @apply mt-10 grid gap-6 sm:grid-cols-2;
+  }
+  &__feature-item {
+    @apply flex items-start gap-3;
+  }
+  &__feature-icon-wrap {
+    @apply flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-violet/10 text-brand-violet;
+  }
+  &__feature-icon {
+    @apply size-5;
+  }
+  &__feature-title {
+    @apply text-sm font-semibold text-white;
+  }
+  &__feature-desc {
+    @apply mt-1 text-sm text-white/50;
+  }
+}
