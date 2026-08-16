@@ -15,9 +15,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Build With Brand — Digital Studio";
+const description =
+  "We build digital experiences that build your brand — websites, web apps, e-commerce and UI/UX design.";
+
 export const metadata: Metadata = {
-  title: "Build with Brand",
-  description: "Next.js App Router with Tailwind CSS and shadcn/ui",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  title,
+  description,
+  openGraph: {
+    type: "website",
+    siteName: "Build With Brand",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
