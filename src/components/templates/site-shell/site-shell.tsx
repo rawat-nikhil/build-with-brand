@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { Footer } from "@/components/organisms/footer";
 import { Navbar } from "@/components/organisms/navbar";
+import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "./site-shell.scss";
 
@@ -17,6 +18,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <Navbar />
       <main className="site-shell__main">{children}</main>
       <Footer />
+      <Toaster />
     </ThemeProvider>
   );
 }
