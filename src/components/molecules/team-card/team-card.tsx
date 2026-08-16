@@ -1,8 +1,11 @@
+import Image from "next/image";
+
 import "./team-card.scss";
 
 interface TeamCardProps {
   name: string;
   role: string;
+  photo?: string;
   linkedinHref?: string;
 }
 
@@ -15,10 +18,22 @@ function initials(name: string) {
     .toUpperCase();
 }
 
-export function TeamCard({ name, role, linkedinHref = "#" }: TeamCardProps) {
+export function TeamCard({ name, role, photo, linkedinHref = "#" }: TeamCardProps) {
   return (
     <div className="team-card group">
-      <div className="team-card__visual">{initials(name)}</div>
+      <div className="team-card__visual">
+        {photo ? (
+          <Image
+            src={photo}
+            alt={name}
+            fill
+            sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 25vw"
+            className="team-card__photo"
+          />
+        ) : (
+          initials(name)
+        )}
+      </div>
       <div className="team-card__overlay">
         <div>
           <p className="team-card__name">{name}</p>

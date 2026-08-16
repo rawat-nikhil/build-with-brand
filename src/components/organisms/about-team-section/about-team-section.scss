@@ -26,10 +26,10 @@
       @apply hidden size-10 border-white/20 bg-white/10 text-white hover:bg-brand-violet hover:text-white lg:flex;
     }
     [data-slot="carousel-previous"] {
-      @apply left-3;
+      @apply left-0 z-10 -translate-x-1/2;
     }
     [data-slot="carousel-next"] {
-      @apply right-3;
+      @apply right-0 z-10 translate-x-1/2;
     }
     [data-slot="carousel-content"] {
       @apply cursor-grab select-none active:cursor-grabbing;

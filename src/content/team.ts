@@ -1,12 +1,16 @@
 import type { TeamMember } from "@/types";
 
 export const team: TeamMember[] = [
-  { name: "Nikhil Rawat", role: "Software Developer" },
-  { name: "Arushi Negi", role: "Product Manager" },
-  { name: "Abhinav Kathait", role: "Front End Developer" },
-  { name: "Tushar Badola", role: "Full Stack Developer" },
-  { name: "Himanshu Khali", role: "Full Stack Developer" },
-  { name: "Rakesh Chauhan", role: "DevOps" },
-  { name: "Ashish Purohit", role: "Backend Developer" },
-  { name: "Akshay Purohit", role: "UI/UX Designer" },
+  { name: "Nikhil Rawat", role: "Software Developer", photo: "/members/nikhil.png" },
+  { name: "Karan Bhardhwaj", role: "DevOps", photo: "/members/karan.png" },
+  { name: "Abhinav Kathait", role: "Frontend Developer", photo: "/members/abhinav.png" },
+  { name: "Tushar Badola", role: "Full Stack Developer", photo: "/members/tushar.png" },
+  { name: "Arushi Negi", role: "Product Manager", photo: "/members/arushi.png" },
+  { name: "Virender Chauhan", role: "Backend Developer", photo: "/members/virender.png" },
+  { name: "Nisha Mangnani", role: "UI/UX Designer", photo: "/members/nisha.png" },
+  {
+    name: "Vinay Khali Chauhan",
+    role: "Full Stack Developer",
+    photo: "/members/vinay.png",
+  },
 ];
