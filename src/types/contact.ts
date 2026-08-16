@@ -6,3 +6,8 @@ export type ContactMethod = {
   value: string;
   sub?: string;
 };
+
+export type ContactFormState = {
+  ok: boolean;
+  error?: string;
+};

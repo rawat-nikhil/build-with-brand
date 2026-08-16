@@ -1,7 +1,10 @@
 @reference "#globals.css";
 
 .contact-form {
-  @apply flex flex-col gap-5;
+  @apply relative flex flex-col gap-5;
+  &__honeypot {
+    @apply absolute -left-[9999px] h-0 w-0 overflow-hidden;
+  }
   &__success {
     @apply flex flex-col items-center justify-center gap-3 rounded-2xl border border-brand-violet/20 bg-brand-violet/5 px-8 py-16 text-center;
   }
@@ -14,8 +17,11 @@
   &__success-desc {
     @apply max-w-sm text-sm text-brand-ink-secondary;
   }
+  &__error {
+    @apply text-sm text-destructive;
+  }
   &__submit {
-    @apply inline-flex w-fit items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-violet-2 to-brand-indigo px-6 py-3 text-sm font-medium text-white shadow-violet-glow transition-opacity hover:opacity-90;
+    @apply inline-flex w-fit items-center justify-center gap-2 rounded-full bg-linear-to-r from-brand-violet-2 to-brand-indigo px-6 py-3 text-sm font-medium text-white shadow-violet-glow transition-opacity hover:opacity-90 disabled:pointer-events-none disabled:opacity-60;
   }
   &__submit-icon {
     @apply size-4;

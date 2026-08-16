@@ -1,21 +1,29 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useActionState, useEffect } from "react";
 import { ArrowRight, CircleCheck } from "lucide-react";
+import { toast } from "sonner";
 
+import { submitContact } from "@/actions/submit-contact";
 import { FormField } from "@/components/atoms/form-field";
 import { projectTypes } from "@/content/project-types";
+import type { ContactFormState } from "@/types";
 import "./contact-form.scss";
 
+const initialState: ContactFormState = { ok: false };
+
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [state, formAction, pending] = useActionState(submitContact, initialState);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitted(true);
-  }
+  useEffect(() => {
+    if (state.ok) {
+      toast.success("Message sent! We'll get back to you within 24 hours.");
+    } else if (state.error) {
+      toast.error(state.error);
+    }
+  }, [state]);
 
-  if (submitted) {
+  if (state.ok) {
     return (
       <div className="contact-form__success">
         <CircleCheck className="contact-form__success-icon" />
@@ -28,7 +36,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form">
+    <form action={formAction} className="contact-form">
       <FormField
         id="name"
         name="name"
@@ -68,10 +76,26 @@ export function ContactForm() {
         required
       />
 
-      <button type="submit" className="contact-form__submit">
-        Send Message
+      {state.error ? (
+        <p className="contact-form__error" role="alert">
+          {state.error}
+        </p>
+      ) : null}
+
+      <button type="submit" className="contact-form__submit" disabled={pending}>
+        {pending ? "Sending..." : "Send Message"}
         <ArrowRight className="contact-form__submit-icon" />
       </button>
+
+      <div className="contact-form__honeypot" aria-hidden="true">
+        <input
+          id="bwb_hp"
+          name="bwb_hp"
+          type="checkbox"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
     </form>
   );
 }
