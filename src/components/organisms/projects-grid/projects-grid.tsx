@@ -5,24 +5,34 @@ import { useMemo, useState } from "react";
 import { ProjectCard } from "@/components/molecules/project-card";
 import { ProjectFilters } from "@/components/molecules/project-filters";
 import { projectFilters } from "@/content/project-filters";
-import type { Project, ProjectFilter } from "@/types";
+import { projects } from "@/content/projects";
+import type { ProjectCategory, ProjectFilter } from "@/types";
 import "./projects-grid.scss";
 
-export function ProjectsGrid({ projects }: { projects: Project[] }) {
-  const [active, setActive] = useState<ProjectFilter>(projectFilters[0]);
+export function ProjectsGrid() {
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory | null>(null);
 
-  const filtered = useMemo(
-    () =>
-      active.category ? projects.filter((p) => p.category === active.category) : projects,
-    [active, projects]
-  );
+  const activeLabel =
+    activeCategory === null
+      ? "All Projects"
+      : (projectFilters.find((f) => f.category === activeCategory)?.label ??
+        "All Projects");
+
+  const filtered = useMemo(() => {
+    if (!activeCategory) return projects;
+    return projects.filter((p) => p.categories.includes(activeCategory));
+  }, [activeCategory]);
+
+  function handleSelect(filter: ProjectFilter) {
+    setActiveCategory(filter.category);
+  }
 
   return (
     <div>
       <ProjectFilters
         filters={projectFilters}
-        activeLabel={active.label}
-        onSelect={setActive}
+        activeLabel={activeLabel}
+        onSelect={handleSelect}
       />
 
       <div className="projects-grid__grid">

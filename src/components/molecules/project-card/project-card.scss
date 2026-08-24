@@ -3,18 +3,25 @@
 .project-card {
   @apply overflow-hidden rounded-2xl border border-white/10 bg-white/3;
   &__preview {
-    @apply flex aspect-[4/3] items-center justify-center bg-gradient-to-br text-sm font-medium text-white/70;
+    @apply relative overflow-hidden flex aspect-4/3 items-center justify-center bg-black/40 text-sm font-medium text-white/70;
+    &::after {
+      content: "";
+      @apply absolute inset-0 pointer-events-none bg-linear-to-br;
+    }
   }
-  &__preview--violet {
+  &__image {
+    @apply object-cover;
+  }
+  &__preview--violet::after {
     @apply from-brand-violet/40 via-brand-indigo/30 to-black/40;
   }
-  &__preview--amber {
+  &__preview--amber::after {
     @apply from-amber-500/30 via-orange-500/20 to-black/40;
   }
-  &__preview--sky {
+  &__preview--sky::after {
     @apply from-sky-500/30 via-blue-500/20 to-black/40;
   }
-  &__preview--emerald {
+  &__preview--emerald::after {
     @apply from-emerald-500/30 via-teal-500/20 to-black/40;
   }
   &__body {
