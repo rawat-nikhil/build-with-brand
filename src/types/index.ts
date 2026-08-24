@@ -4,6 +4,7 @@ export type { Feature } from "./feature";
 export type { LegalDocument, LegalSection } from "./legal";
 export type { NavLink } from "./navigation";
 export type { ProcessStepContent, ProcessStepData, ProcessSummaryStep } from "./process";
+export { PROJECT_CATEGORIES } from "./project";
 export type { Project, ProjectAccent, ProjectCategory, ProjectFilter } from "./project";
 export type { Service } from "./service";
 export type { Social } from "./social";

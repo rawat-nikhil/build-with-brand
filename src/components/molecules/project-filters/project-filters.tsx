@@ -15,7 +15,7 @@ export function ProjectFilters({ filters, activeLabel, onSelect }: ProjectFilter
     <div className="project-filters">
       {filters.map((filter) => (
         <button
-          key={filter.label}
+          key={filter.category ?? "all"}
           type="button"
           onClick={() => onSelect(filter)}
           className={cn(

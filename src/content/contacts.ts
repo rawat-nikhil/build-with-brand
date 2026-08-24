@@ -13,7 +13,7 @@ export const contacts = {
     icon: Phone,
     label: "Call Us",
     value: "+91 9870114941",
-    sub: "Mon - Sat, 10:00 AM - 7:00 PM IST",
+    sub: "Mon - Sun, 10:00 AM - 7:00 PM IST",
   },
   location: {
     icon: MapPin,
@@ -24,8 +24,7 @@ export const contacts = {
   hours: {
     icon: Clock,
     label: "Business Hours",
-    value: "Mon - Sat, 10:00 AM - 7:00 PM IST",
-    sub: "Sunday: Closed",
+    value: "Mon - Sun, 10:00 AM - 7:00 PM IST",
   },
 } satisfies Record<string, ContactMethod>;
 
