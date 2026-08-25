@@ -20,20 +20,21 @@ export default function Home() {
       <HomeProcessSection steps={processSteps} />
       <StatsBar stats={stats} />
       <CTASection
-        tone="gradient"
-        title="Ready to build something amazing together?"
-        description="Let's turn your ideas into powerful digital experiences that grow your brand."
-        actions={
-          <CtaButton href="/contact" variant="dark-solid">
-            Start Your Project
-          </CtaButton>
+        tone="light"
+        title={
+          <>
+            Ready to build something amazing{" "}
+            <span className="about-page__accent">together.</span>
+          </>
         }
+        description="Let's turn your ideas into powerful digital experiences that grow your brand."
+        actions={<CtaButton href="/contact">Start Your Project</CtaButton>}
         decor={
           <>
-            <FloatingCube size={90} tone="dark" className="home-page__cta-cube" />
+            <FloatingCube size={90} tone="violet" className="home-page__cta-cube" />
             <FloatingSphere
               size={70}
-              tone="dark"
+              tone="violet"
               delay={1}
               className="home-page__cta-sphere"
             />
