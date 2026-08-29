@@ -1,7 +1,7 @@
 @reference "#globals.css";
 
 .about-story-section {
-  @apply bg-brand-bg-light px-6 py-20;
+  @apply bg-white px-6 py-20;
 
   &__inner {
     @apply mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2;
@@ -25,9 +25,9 @@
     @apply size-4;
   }
   &__visual {
-    @apply relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-bg-dark via-brand-bg-dark-mid to-black;
+    @apply relative aspect-4/3 overflow-hidden rounded-2xl;
   }
-  &__visual-text {
-    @apply px-6 text-center text-2xl leading-tight font-semibold text-white/80 sm:text-3xl;
+  &__image {
+    @apply object-fill;
   }
 }

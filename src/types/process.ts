@@ -18,16 +18,17 @@ export type ProcessStepContent = {
   description: string;
   bullets: string[];
   timeline: string;
+  image: string;
 };
 
 /** Full step used by the interactive explorer on the process page. */
 export type ProcessStepData = {
   index: string;
   icon: ReactNode;
-  iconLarge: ReactNode;
   title: string;
   summary: string;
   description: string;
   bullets: string[];
   timeline: string;
+  image: string;
 };

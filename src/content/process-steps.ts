@@ -17,6 +17,7 @@ export const processSteps: ProcessStepContent[] = [
       "Scope and requirement gathering",
     ],
     timeline: "1 – 2 Weeks",
+    image: "/journey/logo/discover.png",
   },
   {
     index: "02",
@@ -32,6 +33,7 @@ export const processSteps: ProcessStepContent[] = [
       "Timeline & milestones",
     ],
     timeline: "1 Week",
+    image: "/journey/logo/plan.png",
   },
   {
     index: "03",
@@ -42,6 +44,7 @@ export const processSteps: ProcessStepContent[] = [
       "We craft interfaces that are as beautiful as they are usable, iterating closely with you at every step.",
     bullets: ["UI design", "Interactive prototypes", "Design system", "Usability review"],
     timeline: "2 – 3 Weeks",
+    image: "/journey/logo/design.png",
   },
   {
     index: "04",
@@ -57,6 +60,7 @@ export const processSteps: ProcessStepContent[] = [
       "Performance optimization",
     ],
     timeline: "3 – 6 Weeks",
+    image: "/journey/logo/develop.png",
   },
   {
     index: "05",
@@ -72,6 +76,7 @@ export const processSteps: ProcessStepContent[] = [
       "Accessibility checks",
     ],
     timeline: "1 Week",
+    image: "/journey/logo/test.png",
   },
   {
     index: "06",
@@ -87,5 +92,6 @@ export const processSteps: ProcessStepContent[] = [
       "Growth iterations",
     ],
     timeline: "Ongoing",
+    image: "/journey/logo/luanch.png",
   },
 ];

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -28,13 +29,13 @@ export function AboutStorySection() {
           </Link>
         </div>
         <div className="about-story-section__visual">
-          <p className="about-story-section__visual-text">
-            BUILD
-            <br />
-            WITH
-            <br />
-            PURPOSE.
-          </p>
+          <Image
+            src="/light-story.png"
+            alt="Build With Brand studio"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="about-story-section__image"
+          />
         </div>
       </div>
     </section>

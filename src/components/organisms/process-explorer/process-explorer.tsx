@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Clock, CircleCheck } from "lucide-react";
 
 import { ProcessStep } from "@/components/molecules/process-step";
@@ -42,7 +43,15 @@ export function ProcessExplorer({ steps }: { steps: ProcessStepData[] }) {
           ))}
         </ul>
 
-        <div className="process-explorer__visual">{active.iconLarge}</div>
+        <div className="process-explorer__visual">
+          <Image
+            src={active.image}
+            alt={`${active.title} stage`}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="process-explorer__image"
+          />
+        </div>
 
         <div className="process-explorer__timeline">
           <Clock className="process-explorer__timeline-icon" />

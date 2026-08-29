@@ -15,7 +15,7 @@
     @apply mt-2 text-2xl font-semibold text-brand-ink;
   }
   &__step-desc {
-    @apply mt-4 text-sm text-brand-ink-secondary;
+    @apply mt-4 min-h-[2lh] text-sm text-brand-ink-secondary;
   }
   &__bullets-label {
     @apply mt-6 text-xs font-semibold tracking-eyebrow-sm text-brand-violet uppercase;
@@ -30,7 +30,10 @@
     @apply size-4 shrink-0 text-brand-violet;
   }
   &__visual {
-    @apply mt-6 flex aspect-video w-full items-center justify-center rounded-xl bg-gradient-to-br from-brand-violet/10 via-brand-bg-light to-brand-violet/5;
+    @apply relative mt-6 aspect-video w-full overflow-hidden rounded-xl bg-linear-to-br;
+  }
+  &__image {
+    @apply object-contain;
   }
   &__timeline {
     @apply mt-6 inline-flex items-center gap-3 rounded-lg bg-brand-bg-light px-4 py-3;

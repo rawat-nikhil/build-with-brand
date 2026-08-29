@@ -10,7 +10,6 @@ const steps: ProcessStepData[] = processSteps.map((step) => {
   return {
     ...step,
     icon: <Icon className="size-4" />,
-    iconLarge: <Icon className="size-12 text-brand-violet/40" />,
   };
 });
 
