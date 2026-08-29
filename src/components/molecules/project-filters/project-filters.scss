@@ -1,10 +1,23 @@
 @reference "#globals.css";
 
 .project-filters {
-  @apply flex flex-wrap justify-center gap-2;
-  &__filter {
-    @apply rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:text-white;
+  @apply -mx-6 flex flex-nowrap gap-2 overflow-x-auto scroll-smooth snap-x snap-mandatory px-6;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
+
+  @media (width >= 48rem) {
+    @apply mx-0 flex-wrap justify-center overflow-visible px-0;
+    scroll-snap-type: none;
+  }
+
+  &__filter {
+    @apply shrink-0 snap-start rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:text-white;
+  }
+
   &__filter--active {
     @apply border-brand-violet/40 bg-brand-violet/15 text-brand-violet;
   }
