@@ -1,7 +1,6 @@
 import { Hero } from "@/components/organisms/hero";
 import { IconInfoList } from "@/components/molecules/icon-info-list";
 import { SplitFormSection } from "@/components/organisms/split-form-section";
-import { MapCtaSection } from "@/components/organisms/map-cta-section";
 import { FloatingPaperPlane } from "@/components/atoms/floating-paper-plane";
 import { FloatingSphere } from "@/components/atoms/floating-sphere";
 import { socials } from "@/content/socials";
@@ -37,8 +36,6 @@ export default function ContactPage() {
       />
 
       <SplitFormSection items={otherWays} socials={socials} />
-
-      <MapCtaSection />
     </div>
   );
 }

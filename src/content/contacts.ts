@@ -27,9 +27,3 @@ export const contacts = {
     value: "Mon - Sun, 10:00 AM - 7:00 PM IST",
   },
 } satisfies Record<string, ContactMethod>;
-
-/** Delhi NCR viewport for the contact map. */
-export const mapView = {
-  center: { lat: 28.681675, lng: 77.362306 },
-  zoom: 18,
-} as const;
