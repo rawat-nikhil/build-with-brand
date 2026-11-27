@@ -1,24 +1,71 @@
 @reference "#globals.css";
 
 .work-clients-section {
-  @apply bg-brand-bg-dark px-6 py-14 text-white;
+  @apply bg-brand-bg-dark py-14 text-white;
 
   &__inner {
-    @apply mx-auto max-w-7xl;
+    @apply mx-auto max-w-7xl px-6;
   }
+
   &__label {
     @apply text-center text-xs font-semibold tracking-eyebrow text-white/40 uppercase;
   }
+
+  &__marquee {
+    @apply mt-8 w-full overflow-hidden;
+
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  &__track {
+    display: flex;
+    width: max-content;
+    animation: work-clients-marquee 32s linear infinite;
+  }
+
   &__list {
-    @apply mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-4;
+    @apply flex shrink-0 items-center gap-x-16 pr-16;
   }
+
   &__item {
-    @apply flex items-center gap-2 text-white/40;
+    @apply text-white/40;
   }
-  &__icon {
-    @apply size-4;
-  }
+
   &__name {
-    @apply text-sm font-medium;
+    @apply text-xl font-medium whitespace-nowrap;
+  }
+}
+
+@keyframes work-clients-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-clients-section__marquee {
+    mask-image: none;
+  }
+
+  .work-clients-section__track {
+    width: auto;
+    justify-content: center;
+    animation: none;
+  }
+
+  .work-clients-section__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .work-clients-section__list:last-child {
+    display: none;
   }
 }
