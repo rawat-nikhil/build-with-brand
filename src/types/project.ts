@@ -22,6 +22,7 @@ export type Project = {
   description: string;
   image: string;
   accent: ProjectAccent;
+  url: string;
 };
 
 /** A filter chip; `category: null` means "show everything". */
