@@ -22,7 +22,7 @@ export function ServiceCard({
   index,
   bullets,
   href = "#",
-  linkLabel = "Explore Service",
+  linkLabel = "Request Quote",
   className,
 }: ServiceCardProps) {
   return (

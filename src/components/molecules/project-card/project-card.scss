@@ -1,7 +1,7 @@
 @reference "#globals.css";
 
 .project-card {
-  @apply overflow-hidden rounded-2xl border border-white/10 bg-white/3;
+  @apply block overflow-hidden rounded-2xl border border-white/10 bg-white/3 outline-none focus-visible:ring-2 focus-visible:ring-brand-violet;
   &__preview {
     @apply relative overflow-hidden flex aspect-4/3 items-center justify-center bg-black/40 text-sm font-medium text-white/70;
     &::after {
@@ -34,12 +34,6 @@
     @apply mt-2 text-base font-semibold text-white;
   }
   &__description {
-    @apply mt-2 text-sm text-white/50;
-  }
-  &__link {
-    @apply mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-violet hover:underline;
-  }
-  &__link-icon {
-    @apply size-4;
+    @apply mt-2 line-clamp-2 min-h-10 text-sm leading-5 text-white/50;
   }
 }

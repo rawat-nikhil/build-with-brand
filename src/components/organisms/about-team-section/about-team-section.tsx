@@ -88,12 +88,6 @@ export function AboutTeamSection() {
             />
           ))}
         </div>
-
-        <div className="about-team-section__cta">
-          <CtaButton href="/contact" variant="outline-dark" size="sm">
-            Join Our Team
-          </CtaButton>
-        </div>
       </div>
     </section>
   );
